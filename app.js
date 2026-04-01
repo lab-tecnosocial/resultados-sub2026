@@ -1,3 +1,6 @@
+// Legend collapse state
+let legendCollapsed = false;
+
 // Configuration
 const CONFIG = {
     partyColors: {},   // populated from data-partidos.csv
@@ -7,13 +10,11 @@ const CONFIG = {
     layers: {
         recintos: 'data/recintos_alcalde_cb.geojson',
         recintosPie: 'data/recintos_alcalde_cb.geojson',
-        circunscripciones: 'data/circunscripciones_alcalde_cb.geojson',
         distritos: 'data/distritos_alcalde_cb.geojson'
     },
     layerNames: {
         recintos: 'Recintos (ganador)',
         recintosPie: 'Recintos (distribución)',
-        circunscripciones: 'Circunscripciones',
         distritos: 'Distritos'
     }
 };
@@ -153,7 +154,7 @@ function createPopupContent(properties) {
                 <div>
                     <div style="font-size:10px;opacity:0.8;text-transform:uppercase;letter-spacing:0.5px;">Ganador</div>
                     <div style="font-size:14px;font-weight:700;line-height:1.2;">${ganadorCandidato}</div>
-                    <div style="font-size:11px;opacity:0.9;">${ganador} · ${formatPct(pct_ganador)}%</div>
+                    <div style="font-size:11px;opacity:0.9;">${ganador} · ${formatNumber(properties[ganador] || 0)} (${formatPct(pct_ganador)}%)</div>
                 </div>
             </div>
             ${partyRowsHTML}
@@ -511,16 +512,16 @@ function updateLegend(layerKey) {
             ? `<img src="${img}" style="width:${photoSize}px;height:${photoSize}px;border-radius:50%;object-fit:cover;border:2px solid ${color};flex-shrink:0;" onerror="this.style.display='none'">`
             : `<div style="width:${photoSize}px;height:${photoSize}px;border-radius:50%;background:${color};flex-shrink:0;"></div>`;
         return `
-            <div style="margin-bottom:7px;">
+            <div class="legend-party-item" style="margin-bottom:7px;">
                 <div style="display:flex;align-items:center;gap:7px;margin-bottom:3px;">
                     ${photoHTML}
                     <div style="flex:1;min-width:0;">
                         <div style="font-size:11px;font-weight:700;color:#2c3e50;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${party}</div>
-                        <div style="font-size:9px;color:#7a8fa6;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${candidato}</div>
+                        <div class="legend-candidate" style="font-size:9px;color:#7a8fa6;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${candidato}</div>
                     </div>
                     <span style="font-size:12px;font-weight:700;color:${color};flex-shrink:0;margin-left:4px;">${pct.toFixed(1)}%</span>
                 </div>
-                <div style="background:#e8ecf0;border-radius:3px;height:4px;margin-left:${photoSize + 7}px;">
+                <div class="legend-party-bar" style="background:#e8ecf0;border-radius:3px;height:4px;margin-left:${photoSize + 7}px;">
                     <div style="background:${color};width:${barW}%;height:4px;border-radius:3px;"></div>
                 </div>
             </div>
@@ -533,49 +534,17 @@ function updateLegend(layerKey) {
         ? 'Partidos por recinto'
         : 'Partido (total municipio)';
 
-    const sizeLegendHTML = (layerKey === 'recintos' || layerKey === 'recintosPie') ? `
-        <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(224,230,237,0.7);">
-            <div style="font-size:10px;font-weight:600;color:#2c3e50;margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;">
-                Tamaño por votos totales
-            </div>
-            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:2px;">
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="10" height="10"><circle cx="5" cy="5" r="2.5" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;2K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="14" height="14"><circle cx="7" cy="7" r="4" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;3K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="18" height="18"><circle cx="9" cy="9" r="5.5" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;4K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="22" height="22"><circle cx="11" cy="11" r="7" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;5K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="26" height="26"><circle cx="13" cy="13" r="8.5" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;6K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="30" height="30"><circle cx="15" cy="15" r="10" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">&lt;7K</span>
-                </div>
-                <div style="display:flex;flex-direction:column;align-items:center;flex:1;">
-                    <svg width="36" height="36"><circle cx="18" cy="18" r="12" fill="#999" opacity="0.7"/></svg>
-                    <span style="font-size:8px;color:#666;margin-top:2px;">7K+</span>
-                </div>
-            </div>
-        </div>
-    ` : '';
-
     legendDiv.innerHTML = `
-        <div class="legend-title">${legendTitle}</div>
-        ${swatchesHTML}
-        ${sizeLegendHTML}
+        <div class="legend-header">
+            <div class="legend-title">${legendTitle}</div>
+            <button class="legend-toggle" aria-label="Colapsar leyenda">${legendCollapsed ? '▲' : '▼'}</button>
+        </div>
+        <div class="legend-body">
+            <div class="legend-party-items">${swatchesHTML}</div>
+        </div>
     `;
+    if (legendCollapsed) legendDiv.classList.add('legend-collapsed');
+    else legendDiv.classList.remove('legend-collapsed');
 }
 
 // Load party/candidate data from CSV
@@ -645,6 +614,32 @@ function loadBoundary() {
 document.getElementById('layer-select').addEventListener('change', (e) => {
     switchLayer(e.target.value);
 });
+
+// Legend toggle click (event delegation — survives innerHTML rebuilds)
+const legendDiv = document.getElementById('legend');
+legendDiv.addEventListener('click', (e) => {
+    if (e.target.closest('.legend-toggle')) {
+        legendCollapsed = !legendCollapsed;
+        legendDiv.classList.toggle('legend-collapsed', legendCollapsed);
+        const btn = legendDiv.querySelector('.legend-toggle');
+        if (btn) btn.textContent = legendCollapsed ? '▲' : '▼';
+    }
+});
+
+// Swipe down on legend to collapse
+let legendTouchStartY = 0;
+legendDiv.addEventListener('touchstart', (e) => {
+    legendTouchStartY = e.touches[0].clientY;
+}, { passive: true });
+legendDiv.addEventListener('touchend', (e) => {
+    const dy = e.changedTouches[0].clientY - legendTouchStartY;
+    if (dy > 40 && !legendCollapsed) {
+        legendCollapsed = true;
+        legendDiv.classList.add('legend-collapsed');
+        const btn = legendDiv.querySelector('.legend-toggle');
+        if (btn) btn.textContent = '▲';
+    }
+}, { passive: true });
 
 // Initialize: load party data first, then render
 async function init() {
