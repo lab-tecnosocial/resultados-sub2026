@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados Subnacionales 2026 - Alcaldía Cercado, Cochabamba</title>
+
+    <!-- Meta tags para SEO -->
+    <meta name="description"
+        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos, circunscripciones y distritos.">
+    <meta name="keywords"
+        content="Bolivia, elecciones, 2026, municipales, alcalde, Cochabamba, Cercado, resultados electorales, APB-SUMATE, A-UPP, mapa electoral">
+    <meta name="author" content="Lab TecnoSocial">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://resultados-2davuelta.labtecnosocial.org/">
+    <meta property="og:title" content="Resultados Alcaldía Cercado, Cochabamba 2026">
+    <meta property="og:description"
+        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos, circunscripciones y distritos.">
+    <meta property="og:image" content="https://resultados-2davuelta.labtecnosocial.org/preview.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://resultados-2davuelta.labtecnosocial.org/">
+    <meta property="twitter:title" content="Resultados Alcaldía Cercado, Cochabamba 2026">
+    <meta property="twitter:description"
+        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos, circunscripciones y distritos.">
+    <meta property="twitter:image" content="http://resultados-2davuelta.labtecnosocial.org/preview.jpg">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+    <link rel="stylesheet" href="style.css?v=1761396072522">
+</head>
+
+<body>
+    <div id="map"></div>
+
+    <div class="controls-container">
+        <h2 class="controls-title">Resultados Alcaldía Cercado 2026</h2>
+        <div class="selector-wrapper">
+            <label for="layer-select">Seleccionar capa</label>
+            <select id="layer-select">
+                <option value="recintos">Recintos (ganador)</option>
+                <option value="recintosPie">Recintos (top 3)</option>
+                <option value="circunscripciones">Circunscripciones</option>
+                <option value="distritos">Distritos</option>
+            </select>
+        </div>
+        <div class="selector-wrapper" id="party-filter-wrapper">
+            <label for="party-select">Seleccionar partido</label>
+            <select id="party-select">
+                <option value="">Todos</option>
+            </select>
+        </div>
+    </div>
+
+    <div id="legend" class="legend"></div>
+
+    <div class="credit">
+        <div>Desarrollado por <a href="https://labtecnosocial.org/" target="_blank" rel="noopener noreferrer">Lab
+                TecnoSocial</a> (Beta)</div>
+        <div><a href="fuentes.html">Fuentes de datos</a></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
+    <script src="app.js?v=1761396072522"></script>
+</body>
+
+</html>

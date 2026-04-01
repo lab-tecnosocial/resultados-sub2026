@@ -1,0 +1,533 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #fff;
+    overflow: hidden;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Leaflet customization */
+.leaflet-control-container {
+    z-index: 500;
+}
+
+/* Ocultar atribución y créditos */
+.leaflet-control-attribution {
+    display: none !important;
+}
+
+/* Controles de zoom con transparencia */
+.leaflet-bar {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.leaflet-bar a {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    color: #2c3e50 !important;
+    border-bottom: 1px solid rgba(224, 230, 237, 0.5) !important;
+    backdrop-filter: blur(8px);
+    transition: background-color 0.2s ease;
+}
+
+.leaflet-bar a:last-child {
+    border-bottom: none !important;
+}
+
+.leaflet-bar a:hover {
+    background-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.leaflet-bar a.leaflet-disabled {
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    color: rgba(44, 62, 80, 0.4) !important;
+}
+
+/* Remove focus outline */
+.leaflet-container,
+.leaflet-container *,
+.leaflet-interactive,
+.leaflet-popup,
+.leaflet-popup-content-wrapper,
+.leaflet-marker-icon,
+svg path {
+    outline: none !important;
+}
+
+.leaflet-container:focus,
+.leaflet-container *:focus {
+    outline: none !important;
+}
+
+/* Remove tap highlight on mobile */
+.leaflet-container,
+.leaflet-interactive {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Controls Container */
+.controls-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 600;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 20px;
+    min-width: 280px;
+    backdrop-filter: blur(8px);
+}
+
+.controls-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin: 0 0 15px 0;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #e0e6ed;
+    text-align: center;
+}
+
+.selector-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.selector-wrapper label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #2c3e50;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.selector-wrapper select {
+    padding: 12px 16px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.6);
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%232c3e50' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+    backdrop-filter: blur(8px);
+}
+
+.selector-wrapper select option {
+    font-size: 16px;
+    padding: 10px;
+}
+
+.selector-wrapper select:hover {
+    border-color: #1a6fba;
+    box-shadow: 0 0 0 3px rgba(26, 111, 186, 0.05);
+}
+
+.selector-wrapper select:focus {
+    outline: none;
+    border-color: #1a6fba;
+    box-shadow: 0 0 0 3px rgba(26, 111, 186, 0.1);
+}
+
+/* Legend */
+.legend {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    z-index: 600;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+    padding: 14px;
+    max-width: 300px;
+    backdrop-filter: blur(8px);
+}
+
+.legend-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 6px;
+}
+
+.legend-gradient {
+    margin-bottom: 12px;
+}
+
+.gradient-stops {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.legend-stop {
+    flex: 1;
+}
+
+.legend-color-box {
+    width: 100%;
+    height: 30px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.legend-color-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.legend-stop-label {
+    font-size: 11px;
+    color: #2c3e50;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+.legend-info {
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid #e0e6ed;
+    font-size: 12px;
+    color: #5a6c7d;
+    text-align: center;
+}
+
+.legend-items {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+.legend-color {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.legend-label {
+    font-weight: 500;
+}
+
+/* Credit */
+.credit {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 600;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 6px 12px;
+    font-size: 10px;
+    color: #2c3e50;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    line-height: 1.6;
+}
+
+.credit div {
+    text-align: right;
+}
+
+.credit a {
+    color: #41E68C;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.credit a:hover {
+    color: #2ecc71;
+    text-decoration: underline;
+}
+
+
+/* Popups */
+.leaflet-popup-content-wrapper {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.leaflet-popup-content {
+    margin: 0;
+    padding: 0;
+}
+
+.popup-inner {
+    padding: 16px;
+    font-family: inherit;
+}
+
+.popup-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 12px;
+    border-bottom: 2px solid #e0e6ed;
+    padding-bottom: 10px;
+}
+
+.popup-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+.popup-item:last-child {
+    padding-bottom: 0;
+}
+
+.popup-party {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+}
+
+.popup-color-box {
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    flex-shrink: 0;
+}
+
+.popup-value {
+    text-align: right;
+    font-weight: 500;
+}
+
+.popup-percentage {
+    font-size: 12px;
+    color: #5a6c7d;
+    font-weight: 400;
+}
+
+/* Leaflet popup arrow */
+.leaflet-popup-tip {
+    background: rgba(255, 255, 255, 0.98);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Pie chart markers */
+.pie-chart-marker {
+    background: none !important;
+    border: none !important;
+}
+
+/* Custom tooltip */
+.custom-tooltip {
+    background: rgba(44, 62, 80, 0.95);
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 12px;
+    white-space: nowrap;
+}
+
+.custom-tooltip::before {
+    border-top-color: rgba(44, 62, 80, 0.95);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+
+    /* Ocultar controles de zoom en móvil */
+    .leaflet-control-zoom {
+        display: none !important;
+    }
+
+    .controls-container {
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        min-width: auto;
+        width: auto;
+        max-width: none;
+        padding: 8px 12px;
+        /* Vertical reducido, horizontal normal */
+    }
+
+    .controls-title {
+        font-size: 14px;
+        margin: 0 0 8px 0;
+        padding-bottom: 8px;
+    }
+
+    .selector-wrapper {
+        gap: 4px;
+        /* Reducido aún más */
+    }
+
+    .selector-wrapper label {
+        font-size: 10px;
+        /* Reducido más */
+    }
+
+    .selector-wrapper select {
+        font-size: 12x;
+        /* Aumentado para mejor legibilidad en móvil */
+        padding: 6px 12px;
+        /* Vertical reducido, horizontal normal */
+    }
+
+    .selector-wrapper select option {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .legend {
+        bottom: 5px;
+        left: 5px;
+        right: 5px;
+        max-width: none;
+        width: auto;
+        padding: 6px 10px 3px 10px;
+        margin-bottom: 26px;
+    }
+
+    .legend-title {
+        font-size: 9px;
+        margin-bottom: 4px;
+        padding-bottom: 3px;
+    }
+
+    .legend-info {
+        margin-top: 4px;
+        padding-top: 4px;
+        font-size: 9px;
+    }
+
+    /* Hacer el gradiente más bajo en móvil */
+    .legend-gradient-bar {
+        height: 16px !important;
+    }
+
+    /* Credit más compacto en móvil */
+    .credit {
+        bottom: 5px;
+        right: 5px;
+        padding: 3px 6px;
+        font-size: 7px;
+        line-height: 1.4;
+    }
+}
+
+/* Loading animation */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Hover effects */
+.leaflet-interactive:hover {
+    opacity: 0.9;
+    filter: brightness(1.05);
+}
+
+/* Loader */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.loader-spinner {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loader p {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* New Popup Styles */
+.popup-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #2c3e50;
+}
+
+.popup-label {
+    font-weight: 600;
+    color: #5a6c7d;
+}
+
+.popup-divider {
+    height: 1px;
+    background: #e0e6ed;
+    margin: 8px 0;
+}

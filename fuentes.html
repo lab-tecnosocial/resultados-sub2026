@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuentes de Datos - Resultados Electorales Bolivia 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: #5a6c7d;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .sources-list {
+            list-style: none;
+        }
+
+        .source-item {
+            padding: 20px;
+            margin-bottom: 16px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            border-left: 4px solid #41E68C;
+            transition: all 0.3s ease;
+        }
+
+        .source-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .source-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .source-org {
+            font-size: 14px;
+            color: #5a6c7d;
+            margin-bottom: 4px;
+        }
+
+        .source-link {
+            font-size: 13px;
+            color: #41E68C;
+            text-decoration: none;
+            font-weight: 500;
+            word-break: break-all;
+            transition: color 0.2s ease;
+        }
+
+        .source-link:hover {
+            color: #2ecc71;
+            text-decoration: underline;
+        }
+
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 24px;
+            background: #41E68C;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .back-button:hover {
+            background: #2ecc71;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(65, 230, 140, 0.3);
+        }
+
+        .footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 2px solid #e0e6ed;
+            text-align: center;
+            font-size: 14px;
+            color: #5a6c7d;
+        }
+
+        .footer a {
+            color: #41E68C;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 24px;
+            }
+
+            h1 {
+                font-size: 22px;
+            }
+
+            .subtitle {
+                font-size: 14px;
+            }
+
+            .source-item {
+                padding: 16px;
+            }
+
+            .source-title {
+                font-size: 15px;
+            }
+
+            .source-org {
+                font-size: 13px;
+            }
+
+            .source-link {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Fuentes de Datos</h1>
+        <p class="subtitle">Resultados Electorales Bolivia 2025 - Segunda Vuelta</p>
+
+        <ul class="sources-list">
+            <li class="source-item">
+                <div class="source-title">Resultados de 2da. vuelta</div>
+                <div class="source-org">Órgano Electoral Plurinacional (OEP)</div>
+                <a href="https://computo.oep.org.bo/" target="_blank" rel="noopener noreferrer"
+                    class="source-link">https://computo.oep.org.bo/</a>
+            </li>
+
+            <li class="source-item">
+                <div class="source-title">Departamentos</div>
+                <div class="source-org">GeoBolivia</div>
+                <a href="https://geo.gob.bo" target="_blank" rel="noopener noreferrer"
+                    class="source-link">https://geo.gob.bo</a>
+            </li>
+
+            <li class="source-item">
+                <div class="source-title">Municipios</div>
+                <div class="source-org">GeoBolivia</div>
+                <a href="https://geo.gob.bo" target="_blank" rel="noopener noreferrer"
+                    class="source-link">https://geo.gob.bo</a>
+            </li>
+
+            <li class="source-item">
+                <div class="source-title">Circunscripciones</div>
+                <div class="source-org">GeoElectoral</div>
+                <a href="https://geoelectoral.oep.org.bo/" target="_blank" rel="noopener noreferrer"
+                    class="source-link">https://geoelectoral.oep.org.bo/</a>
+            </li>
+
+            <li class="source-item">
+                <div class="source-title">Distritos</div>
+                <div class="source-org">GeoElectoral</div>
+                <a href="https://geoelectoral.oep.org.bo/" target="_blank" rel="noopener noreferrer"
+                    class="source-link">https://geoelectoral.oep.org.bo/</a>
+            </li>
+
+            <li class="source-item">
+                <div class="source-title">Recintos con resultados</div>
+                <div class="source-org">Repositorio DatosBolivia y Mauricio Foronda</div>
+                <a href="https://github.com/datosbolivia/elecciones2025/tree/main" target="_blank"
+                    rel="noopener noreferrer"
+                    class="source-link">https://github.com/datosbolivia/elecciones2025/tree/main</a>
+            </li>
+        </ul>
+
+        <center>
+            <a href="index.html" class="back-button">← Volver al mapa</a>
+        </center>
+
+        <div class="footer">
+            Desarrollado por <a href="https://labtecnosocial.org/" target="_blank" rel="noopener noreferrer">Lab
+                TecnoSocial</a>
+        </div>
+    </div>
+</body>
+
+</html>

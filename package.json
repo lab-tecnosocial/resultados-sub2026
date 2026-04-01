@@ -1,0 +1,16 @@
+{
+    "name": "resultados-2davuelta",
+    "version": "1.0.0",
+    "description": "Mapa interactivo de resultados electorales Bolivia 2025 - Segunda Vuelta",
+    "scripts": {
+        "build": "node build.js",
+        "deploy": "./deploy.sh"
+    },
+    "keywords": [
+        "bolivia",
+        "elecciones",
+        "mapa",
+        "electoral"
+    ],
+    "author": "Lab TecnoSocial"
+}
