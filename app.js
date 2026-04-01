@@ -513,13 +513,13 @@ function updateLegend(layerKey) {
             : `<div style="width:${photoSize}px;height:${photoSize}px;border-radius:50%;background:${color};flex-shrink:0;"></div>`;
         return `
             <div class="legend-party-item" style="margin-bottom:7px;">
-                <div style="display:flex;align-items:center;gap:7px;margin-bottom:3px;">
+                <div class="legend-party-row" style="display:flex;align-items:center;gap:7px;margin-bottom:3px;">
                     ${photoHTML}
                     <div style="flex:1;min-width:0;">
-                        <div style="font-size:11px;font-weight:700;color:#2c3e50;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${party}</div>
+                        <div class="legend-party-name" style="font-size:11px;font-weight:700;color:#2c3e50;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${party}</div>
                         <div class="legend-candidate" style="font-size:9px;color:#7a8fa6;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${candidato}</div>
                     </div>
-                    <span style="font-size:12px;font-weight:700;color:${color};flex-shrink:0;margin-left:4px;">${pct.toFixed(1)}%</span>
+                    <span class="legend-party-pct" style="font-size:12px;font-weight:700;color:${color};flex-shrink:0;margin-left:4px;">${pct.toFixed(1)}%</span>
                 </div>
                 <div class="legend-party-bar" style="background:#e8ecf0;border-radius:3px;height:4px;margin-left:${photoSize + 7}px;">
                     <div style="background:${color};width:${barW}%;height:4px;border-radius:3px;"></div>

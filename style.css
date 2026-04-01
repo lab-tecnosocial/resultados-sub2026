@@ -458,11 +458,12 @@ svg path {
     .legend {
         bottom: 5px;
         left: 5px;
-        right: 5px;
-        max-width: none;
-        width: auto;
+        right: auto;
+        max-width: 240px;
+        width: calc(100vw - 90px);
         padding: 6px 8px 6px 8px;
         margin-bottom: 26px;
+        overflow: hidden;
     }
 
     .legend-header {
@@ -500,14 +501,37 @@ svg path {
         display: none;
     }
 
+    .legend-party-item {
+        min-width: 0;
+    }
+
+    .legend-party-row {
+        gap: 4px !important;
+    }
+
     .legend-party-item img,
-    .legend-party-item>div>div>div[style*="border-radius:50%"] {
-        width: 16px !important;
-        height: 16px !important;
+    .legend-party-item > div > div > div[style*="border-radius:50%"] {
+        width: 14px !important;
+        height: 14px !important;
+        min-width: 14px;
+    }
+
+    .legend-party-name {
+        font-size: 9px !important;
+    }
+
+    .legend-party-pct {
+        font-size: 10px !important;
+        margin-left: 2px !important;
     }
 
     .legend-party-bar {
         margin-left: 0 !important;
+        height: 3px !important;
+    }
+
+    .legend-party-bar > div {
+        height: 3px !important;
     }
 
     /* Botón colapsar leyenda */
