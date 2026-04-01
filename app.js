@@ -2,6 +2,7 @@
 const CONFIG = {
     partyColors: {},   // populated from data-partidos.csv
     partiesData: {},   // { partido: { candidato, color, img } }
+    totals: {},        // { partido: { votes, pct } } — municipal aggregates
     neutral: '#E8E8E8',
     layers: {
         recintos: 'data/recintos_alcalde_cb.geojson',
@@ -11,7 +12,7 @@ const CONFIG = {
     },
     layerNames: {
         recintos: 'Recintos (ganador)',
-        recintosPie: 'Recintos (top 3)',
+        recintosPie: 'Recintos (distribución)',
         circunscripciones: 'Circunscripciones',
         distritos: 'Distritos'
     }
@@ -21,7 +22,7 @@ const CONFIG = {
 const map = L.map('map', {
     zoomControl: false,
     minZoom: 10
-}).setView([-17.3935, -66.1570], window.innerWidth <= 768 ? 11 : 12);
+}).setView([-17.3935, -66.1870], window.innerWidth <= 768 ? 11 : 12);
 
 // Agregar control de zoom en la esquina superior derecha
 L.control.zoom({
@@ -42,7 +43,6 @@ map.getPane('boundaryPane').style.zIndex = 350;
 let currentLayer = 'recintos';
 let currentGeoJsonLayer = null;
 let geoJsonData = {};
-let currentPartyFilter = null;
 
 // Categorical color by winning party
 function getColorByWinner(properties) {
@@ -74,7 +74,7 @@ function getFeatureName(properties) {
 
     // Distritos - formato "Ciudad - Distrito ##"
     if (properties.nombreciud && properties.distrito) {
-        return `${properties.nombreciud} - Distrito ${properties.distrito}`;
+        return `${properties.nombreciud} - Distrito ${parseInt(properties.distrito, 10)}`;
     }
     if (properties.nombreciud) return properties.nombreciud;
 
@@ -114,7 +114,7 @@ function createPopupContent(properties) {
         'PDC', 'NGP', 'MTS', 'APB-SUMATE', 'UNIDOS-'];
     const partyVotes = partyKeys
         .map(k => ({ key: k, votes: properties[k] || 0 }))
-        .filter(p => p.votes > 0)
+        .filter(p => p.votes > 0 && p.key !== ganador)
         .sort((a, b) => b.votes - a.votes);
 
     const partyRowsHTML = partyVotes.map(({ key, votes }) => {
@@ -187,17 +187,11 @@ function getFeatureStyle(feature) {
     if (feature.geometry.type === 'Point') {
         // Points (recintos) - scale by votos_totales using 7 groups
         const votosTotales = properties.votos_totales || 0;
-        let radius, fillColor, fillOpacity, sizeBase;
-        if (currentPartyFilter) {
-            fillColor = CONFIG.partyColors[currentPartyFilter] || '#888';
-            fillOpacity = 0.75;
-            sizeBase = properties[currentPartyFilter] || 0;
-        } else {
-            const result = getColorByWinner(properties);
-            fillColor = result.color;
-            fillOpacity = result.fillOpacity;
-            sizeBase = votosTotales;
-        }
+        let radius, fillColor, fillOpacity;
+        const { color: fillColorW, fillOpacity: fillOpacityW } = getColorByWinner(properties);
+        fillColor = fillColorW;
+        fillOpacity = fillOpacityW;
+        const sizeBase = votosTotales;
 
         if (sizeBase <= 2000) radius = 2.5;
         else if (sizeBase <= 3000) radius = 4.0;
@@ -234,9 +228,7 @@ function createGeoJsonLayer(data) {
         const geoJsonLayer = L.geoJSON(data, {
             filter: (feature) => {
                 const props = feature.properties;
-                if (!props || !(props.votos_totales > 0)) return false;
-                if (currentPartyFilter) return (props[currentPartyFilter] || 0) > 0;
-                return true;
+                return props && props.votos_totales > 0;
             },
             pointToLayer: (feature, latlng) => {
                 try {
@@ -503,53 +495,43 @@ async function switchLayer(layerKey) {
 function updateLegend(layerKey) {
     const legendDiv = document.getElementById('legend');
 
-    const allParties = Object.keys(CONFIG.partyColors);
+    // Parties sorted by municipal vote share desc
+    const sortedParties = Object.keys(CONFIG.partyColors)
+        .sort((a, b) => ((CONFIG.totals[b] || {}).pct || 0) - ((CONFIG.totals[a] || {}).pct || 0));
+    const maxPct = sortedParties.length ? ((CONFIG.totals[sortedParties[0]] || {}).pct || 1) : 1;
 
-    // When party filter active: show only that party swatch
-    const swatchesHTML = (layerKey === 'recintos' && currentPartyFilter) ? (() => {
-        const pd = CONFIG.partiesData[currentPartyFilter] || {};
-        const color = pd.color || CONFIG.partyColors[currentPartyFilter] || '#888';
-        const img = pd.img || '';
-        const candidato = pd.candidato || '';
-        const photoHTML = img
-            ? `<img src="${img}" style="width:40px;height:40px;border-radius:50%;object-fit:cover;border:2px solid ${color};" onerror="this.style.display='none'">`
-            : `<div style="width:40px;height:40px;border-radius:50%;background:${color};"></div>`;
-        return `
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
-                ${photoHTML}
-                <div>
-                    <div style="font-size:12px;font-weight:700;color:#2c3e50;">${currentPartyFilter}</div>
-                    <div style="font-size:11px;color:#5a6c7d;">${candidato}</div>
-                </div>
-            </div>
-            <div style="font-size:10px;color:#5a6c7d;font-style:italic;">
-                Tamaño proporcional a votos del partido
-            </div>
-        `;
-    })() : allParties.map(party => {
+    const partyBarHTML = (party, photoSize) => {
         const pd = CONFIG.partiesData[party] || {};
         const color = pd.color || CONFIG.partyColors[party] || '#888';
         const img = pd.img || '';
         const candidato = pd.candidato || '';
+        const pct = (CONFIG.totals[party] || {}).pct || 0;
+        const barW = (pct / maxPct * 100).toFixed(1);
         const photoHTML = img
-            ? `<img src="${img}" style="width:30px;height:30px;border-radius:50%;object-fit:cover;border:2px solid ${color};flex-shrink:0;" onerror="this.style.display='none'">`
-            : `<div style="width:30px;height:30px;border-radius:50%;background:${color};flex-shrink:0;"></div>`;
+            ? `<img src="${img}" style="width:${photoSize}px;height:${photoSize}px;border-radius:50%;object-fit:cover;border:2px solid ${color};flex-shrink:0;" onerror="this.style.display='none'">`
+            : `<div style="width:${photoSize}px;height:${photoSize}px;border-radius:50%;background:${color};flex-shrink:0;"></div>`;
         return `
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
-                ${photoHTML}
-                <div>
-                    <div style="font-size:11px;font-weight:700;color:#2c3e50;line-height:1.2;">${party}</div>
-                    <div style="font-size:10px;color:#5a6c7d;line-height:1.2;">${candidato}</div>
+            <div style="margin-bottom:7px;">
+                <div style="display:flex;align-items:center;gap:7px;margin-bottom:3px;">
+                    ${photoHTML}
+                    <div style="flex:1;min-width:0;">
+                        <div style="font-size:11px;font-weight:700;color:#2c3e50;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${party}</div>
+                        <div style="font-size:9px;color:#7a8fa6;line-height:1.2;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${candidato}</div>
+                    </div>
+                    <span style="font-size:12px;font-weight:700;color:${color};flex-shrink:0;margin-left:4px;">${pct.toFixed(1)}%</span>
+                </div>
+                <div style="background:#e8ecf0;border-radius:3px;height:4px;margin-left:${photoSize + 7}px;">
+                    <div style="background:${color};width:${barW}%;height:4px;border-radius:3px;"></div>
                 </div>
             </div>
         `;
-    }).join('');
+    };
+
+    const swatchesHTML = sortedParties.map(p => partyBarHTML(p, 26)).join('');
 
     const legendTitle = layerKey === 'recintosPie'
         ? 'Partidos por recinto'
-        : (layerKey === 'recintos' && currentPartyFilter)
-            ? currentPartyFilter
-            : 'Partido ganador';
+        : 'Partido (total municipio)';
 
     const sizeLegendHTML = (layerKey === 'recintos' || layerKey === 'recintosPie') ? `
         <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(224,230,237,0.7);">
@@ -613,6 +595,32 @@ async function loadPartiesData() {
     }
 }
 
+// Load municipal vote totals from circunscripciones CSV
+async function loadTotals() {
+    try {
+        const response = await fetch('data/circunscripciones_alcalde_cb.csv');
+        const text = await response.text();
+        const lines = text.trim().split('\n');
+        const header = lines[0].split(',');
+        const sums = {};
+        let grandTotal = 0;
+        for (let i = 1; i < lines.length; i++) {
+            const vals = lines[i].split(',');
+            header.forEach((h, idx) => {
+                const v = parseFloat(vals[idx]) || 0;
+                if (h === 'votos_totales') grandTotal += v;
+                else sums[h] = (sums[h] || 0) + v;
+            });
+        }
+        Object.keys(CONFIG.partyColors).forEach(party => {
+            const votes = sums[party] || 0;
+            CONFIG.totals[party] = { votes, pct: grandTotal > 0 ? (votes / grandTotal * 100) : 0 };
+        });
+    } catch (e) {
+        console.error('Error loading totals:', e);
+    }
+}
+
 // Load permanent Cochabamba boundary
 function loadBoundary() {
     fetch('data/cochabamba_municipio.geojson')
@@ -633,38 +641,15 @@ function loadBoundary() {
         .catch(e => console.error('Error loading boundary:', e));
 }
 
-const partySelect = document.getElementById('party-select');
-
 // Event listener for layer selection
 document.getElementById('layer-select').addEventListener('change', (e) => {
-    const layerKey = e.target.value;
-    const partyWrapper = document.getElementById('party-filter-wrapper');
-    if (layerKey === 'recintos') {
-        partyWrapper.style.display = '';
-    } else {
-        partyWrapper.style.display = 'none';
-        currentPartyFilter = null;
-        partySelect.value = '';
-    }
-    switchLayer(layerKey);
-});
-
-// Event listener for party filter
-partySelect.addEventListener('change', (e) => {
-    currentPartyFilter = e.target.value || null;
-    switchLayer('recintos');
+    switchLayer(e.target.value);
 });
 
 // Initialize: load party data first, then render
 async function init() {
     await loadPartiesData();
-    // Populate party select from loaded data
-    Object.keys(CONFIG.partyColors).forEach(party => {
-        const opt = document.createElement('option');
-        opt.value = party;
-        opt.textContent = party;
-        partySelect.appendChild(opt);
-    });
+    await loadTotals();
     loadBoundary();
     switchLayer('recintos');
 }
