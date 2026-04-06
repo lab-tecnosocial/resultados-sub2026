@@ -4,29 +4,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados Subnacionales 2026 - Alcaldía Cercado, Cochabamba</title>
+    <title>Resultados Subnacionales 2026 - Bolivia</title>
 
     <!-- Meta tags para SEO -->
     <meta name="description"
-        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos y distritos.">
+        content="Mapa interactivo de los resultados de las elecciones municipales de alcalde en Bolivia 2026. Visualiza datos por recintos y distritos.">
     <meta name="keywords"
-        content="Bolivia, elecciones, 2026, municipales, alcalde, Cochabamba, Cercado, resultados electorales, APB-SUMATE, A-UPP, mapa electoral">
+        content="Bolivia, elecciones, 2026, municipales, alcalde, Cochabamba, La Paz, Santa Cruz, resultados electorales, mapa electoral">
     <meta name="author" content="Lab TecnoSocial">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lab-tecnosocial.github.io/resultados-sub2026/">
-    <meta property="og:title" content="Resultados Alcaldía Cercado, Cochabamba 2026">
+    <meta property="og:title" content="Resultados Municipales Bolivia 2026">
     <meta property="og:description"
-        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos y distritos.">
+        content="Mapa interactivo de los resultados de las elecciones municipales de alcalde en Bolivia 2026. Visualiza datos por recintos y distritos.">
     <meta property="og:image" content="https://lab-tecnosocial.github.io/resultados-sub2026/preview.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lab-tecnosocial.github.io/resultados-sub2026/">
-    <meta property="twitter:title" content="Resultados Alcaldía Cercado, Cochabamba 2026">
+    <meta property="twitter:title" content="Resultados Municipales Bolivia 2026">
     <meta property="twitter:description"
-        content="Mapa interactivo de los resultados de la elección municipal de Alcalde de Cercado, Cochabamba 2026. Visualiza datos por recintos y distritos.">
+        content="Mapa interactivo de los resultados de las elecciones municipales de alcalde en Bolivia 2026. Visualiza datos por recintos y distritos.">
     <meta property="twitter:image" content="https://lab-tecnosocial.github.io/resultados-sub2026/preview.jpg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
@@ -38,9 +38,25 @@
 
     <div class="controls-container">
         <h2 class="controls-title">Mapa de resultados electorales</h2>
-        <p class="controls-subtitle">Alcaldia de Cochabamba 2026</p>
-        <p class="controls-info">Haz click en las burbujas o los polígonos para conocer el resultado exacto</p>
+        <p id="controls-subtitle" class="controls-subtitle">Bolivia - Subnacionales 2026</p>
+        <p class="controls-info">Selecciona un municipio para ver los resultados</p>
         <div class="selector-wrapper">
+            <label for="municipality-select">Municipio</label>
+            <select id="municipality-select">
+                <option value="">-- Selecciona un municipio --</option>
+                <option value="cochabamba">Cochabamba</option>
+                <option value="la-paz">La Paz</option>
+                <option value="el-alto">El Alto</option>
+                <option value="santa-cruz">Santa Cruz</option>
+                <option value="oruro">Oruro</option>
+                <option value="potosi">Potosí</option>
+                <option value="sucre">Sucre</option>
+                <option value="tarija">Tarija</option>
+                <option value="trinidad">Trinidad</option>
+                <option value="cobija">Cobija</option>
+            </select>
+        </div>
+        <div id="layer-select-wrapper" class="selector-wrapper">
             <label for="layer-select">Seleccionar capa</label>
             <select id="layer-select">
                 <option value="recintos">Recintos (ganador)</option>

@@ -439,15 +439,12 @@ svg path {
     }
 
     .selector-wrapper label {
-        font-size: 10px;
-        /* Reducido más */
+        font-size: 12px;
     }
 
     .selector-wrapper select {
-        font-size: 12x;
-        /* Aumentado para mejor legibilidad en móvil */
+        font-size: 15px;
         padding: 6px 12px;
-        /* Vertical reducido, horizontal normal */
     }
 
     .selector-wrapper select option {
