@@ -4,15 +4,15 @@ let legendCollapsed = false;
 // Municipality configuration
 const MUNICIPALITIES_CONFIG = {
     'cochabamba': { name: 'Cochabamba', coords: [-17.3895, -66.1568], zoom: { m: 11, d: 12 }, folder: 'cochabamba', fileSuffix: 'cochabamba' },
-    'la-paz':     { name: 'La Paz',     coords: [-16.4897, -68.1193], zoom: { m: 12, d: 13 }, folder: 'la-paz',     fileSuffix: 'la_paz' },
-    'el-alto':    { name: 'El Alto',    coords: [-16.5056, -68.1933], zoom: { m: 12, d: 13 }, folder: 'el-alto',    fileSuffix: 'el_alto' },
+    'la-paz': { name: 'La Paz', coords: [-16.4897, -68.1193], zoom: { m: 12, d: 13 }, folder: 'la-paz', fileSuffix: 'la_paz' },
+    'el-alto': { name: 'El Alto', coords: [-16.5056, -68.1933], zoom: { m: 12, d: 13 }, folder: 'el-alto', fileSuffix: 'el_alto' },
     'santa-cruz': { name: 'Santa Cruz', coords: [-17.7833, -63.1822], zoom: { m: 11, d: 12 }, folder: 'santa-cruz', fileSuffix: 'santa_cruz' },
-    'oruro':      { name: 'Oruro',      coords: [-17.9667, -67.1167], zoom: { m: 12, d: 13 }, folder: 'oruro',      fileSuffix: 'oruro' },
-    'potosi':     { name: 'Potosí',     coords: [-19.5836, -65.7531], zoom: { m: 12, d: 13 }, folder: 'potosi',     fileSuffix: 'potosi' },
-    'sucre':      { name: 'Sucre',      coords: [-19.0430, -65.2592], zoom: { m: 12, d: 13 }, folder: 'sucre',      fileSuffix: 'sucre' },
-    'tarija':     { name: 'Tarija',     coords: [-21.5237, -64.7296], zoom: { m: 12, d: 13 }, folder: 'tarija',     fileSuffix: 'tarija' },
-    'trinidad':   { name: 'Trinidad',   coords: [-14.8333, -64.9000], zoom: { m: 12, d: 13 }, folder: 'trinidad',   fileSuffix: 'trinidad' },
-    'cobija':     { name: 'Cobija',     coords: [-11.0280, -68.7697], zoom: { m: 12, d: 13 }, folder: 'cobija',     fileSuffix: 'cobija' },
+    'oruro': { name: 'Oruro', coords: [-17.9667, -67.1167], zoom: { m: 12, d: 13 }, folder: 'oruro', fileSuffix: 'oruro' },
+    'potosi': { name: 'Potosí', coords: [-19.5836, -65.7531], zoom: { m: 12, d: 13 }, folder: 'potosi', fileSuffix: 'potosi' },
+    'sucre': { name: 'Sucre', coords: [-19.0430, -65.2592], zoom: { m: 12, d: 13 }, folder: 'sucre', fileSuffix: 'sucre' },
+    'tarija': { name: 'Tarija', coords: [-21.5237, -64.7296], zoom: { m: 12, d: 13 }, folder: 'tarija', fileSuffix: 'tarija' },
+    'trinidad': { name: 'Trinidad', coords: [-14.8333, -64.9000], zoom: { m: 12, d: 13 }, folder: 'trinidad', fileSuffix: 'trinidad' },
+    'cobija': { name: 'Cobija', coords: [-11.0280, -68.7697], zoom: { m: 12, d: 13 }, folder: 'cobija', fileSuffix: 'cobija' },
 };
 
 // Configuration
@@ -532,8 +532,8 @@ function updateLegend(layerKey) {
     const swatchesHTML = sortedParties.map(p => partyBarHTML(p, 26)).join('');
 
     const legendTitle = layerKey === 'recintosPie'
-        ? 'Partidos por recinto'
-        : 'Partido (total municipio)';
+        ? 'Partidos (%)'
+        : 'Partidos (%)';
 
     legendDiv.innerHTML = `
         <div class="legend-header">
@@ -652,16 +652,16 @@ function addBoliviaMarkers() {
             weight: 2,
             fillOpacity: 0.85
         })
-        .bindTooltip(cfg.name, {
-            permanent: false,
-            direction: 'auto',
-            className: 'custom-tooltip'
-        })
-        .on('click', () => {
-            document.getElementById('municipality-select').value = key;
-            switchMunicipality(key);
-        })
-        .addTo(boliviaMarkersLayer);
+            .bindTooltip(cfg.name, {
+                permanent: false,
+                direction: 'auto',
+                className: 'custom-tooltip'
+            })
+            .on('click', () => {
+                document.getElementById('municipality-select').value = key;
+                switchMunicipality(key);
+            })
+            .addTo(boliviaMarkersLayer);
     });
     boliviaMarkersLayer.addTo(map);
 }
