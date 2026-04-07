@@ -1,11 +1,42 @@
-partido,candidato,color,img
-FRI,Jhon Mendoza,#CE1819,fri.jpg
-SOLUCIONES-CON-TODOS,Javier Bellott,#2DA6DB,sct.jpg
-PATRIA-UNIDOS,Ramon Daza,#E0701A,patria.jpg
-A-UPP,Carlos Zabaleta,#E2B319,upp.jpg
-LIBRE,Rodrigo Anaya,#FF4040,libre.jpeg
-PDC,Cristian Tastaca,#2E6C6D,pdc.webp
-NGP,Jose Carlos Sanchez Berzain,#F5A214,ngp.jpg
-MTS,Ronald Unzueta,#27925F,mts.webp
-APB-SUMATE,Manfred Reyes Villa,#7233A8,sumate.jpg
-UNIDOS-,Rocio Molina,#CCCBC8,unidos.jpg
+municipio,partido,candidato,color,img
+Cochabamba,FRI,Jhon Mendoza,#CE1819,fri.jpg
+Cochabamba,SOLUCIONES-CON-TODOS,Javier Bellott,#2DA6DB,sct.jpg
+Cochabamba,PATRIA-UNIDOS,Ramon Daza,#E0701A,patria.jpg
+Cochabamba,A-UPP,Carlos Zabaleta,#E2B319,upp.jpg
+Cochabamba,LIBRE,Rodrigo Anaya,#FF4040,libre.jpeg
+Cochabamba,PDC,Cristian Tastaca,#2E6C6D,pdc.webp
+Cochabamba,NGP,Jose Carlos Sanchez Berzain,#F5A214,ngp.jpg
+Cochabamba,MTS,Ronald Unzueta,#27925F,mts.webp
+Cochabamba,APB-SUMATE,Manfred Reyes Villa,#7233A8,sumate.jpg
+Cochabamba,UNIDOS-,Rocio Molina,#CCCBC8,unidos.jpg
+La Paz,ASP,Xavier Iturralde,#F9E301,xavier-lp.png
+La Paz,VENCEREMOS,Waldo Albarracín,#FE7E39,albarracin-lp.webp
+La Paz,PDC,Mario Silva,#017924,mario-silva.jpg
+La Paz,A-UPP,Isaac Fernandez,#E2B319,upp-lp.png
+La Paz,ASLP,Miguel Roca,#CB2042,miguel-roca.jpg
+La Paz,PATRIA-LA-PAZ,Carlos Rivero,#E0701A,rivero.jpg
+La Paz,MTS,Jorge Dulón,#27925F,dulon.webp
+La Paz,UPC,Luis Siles,#8C0C26,siles.png
+La Paz,JALLALLA LP,Jhonny Plata,#F00132,plata.jpg
+La Paz,NGP,Hernán Rivera,#05B2DC,rivera.webp
+La Paz,SPBC,Ivan Arias,#00BAB2,arias.jpeg
+La Paz,VIDA,Fernando Valencia,#D36B10,valencia.png
+La Paz,APB-SUMATE,Oscar Sogliano,#7C1D84,sogliano.png
+La Paz,LIBRE,Carlos Palenque,#0057B1,carlos-palenque.jpg
+La Paz,M.P.S.,Ricardo Cuevas,#103A67,cuevas.png
+La Paz,FRI,Raúl Daza,#CE1819,raul-daza.jpg
+La Paz,IH,Cesar Dockweiler,#FF81FE,dockweiler.jpg
+Santa Cruz,ASIP,Gomer Padilla,#01B3C4,gomer.png
+Santa Cruz,NGP,Paola Cronembold,#05B2DC,p-c.png
+Santa Cruz,SPT,Angelica Sosa,#FED418,sosa.jpg
+Santa Cruz,FE,Soo Hyun Chung,#2FA225,soohyun.webp
+Santa Cruz,UN,Federico Moron,#01017C,moron.png
+Santa Cruz,PATRIA-UNIDOS,Alfredo Solares,#FE4D00,solares.jpg
+Santa Cruz,TODOS,Carlos Subirana,#1AA347,subirana.png
+Santa Cruz,VOS,Manuel Saavedra,#FE0124,mamen.webp
+Santa Cruz,SOL,Oscar Vargas,#FC5600,vargasc.png
+Santa Cruz,UNIDOS,Rosario Schamisseddine,#0087B8,scha.jpg
+Santa Cruz,PSC,Gary Añez,#11BA01,gary.png
+Santa Cruz,MTS,Felix Oros,#27925F,oros.jpeg
+Santa Cruz,A-UPP,Orlando Peña,#E2B319,orlandopena.png
+Santa Cruz,PDC,Rafael Quinteros,#2E6C6D,rquinteros.png

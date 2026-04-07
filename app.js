@@ -549,18 +549,20 @@ function updateLegend(layerKey) {
 }
 
 // Load party/candidate data from CSV; auto-generate colors for parties not in CSV
-async function loadPartiesData(detectedPartyKeys) {
+async function loadPartiesData(municipalityKey, detectedPartyKeys) {
+    const municipioName = MUNICIPALITIES_CONFIG[municipalityKey].name;
     try {
         const response = await fetch('data/data-partidos.csv');
         const text = await response.text();
         const lines = text.trim().split('\n');
         for (let i = 1; i < lines.length; i++) {
             const parts = lines[i].split(',');
-            const partido = parts[0];
-            const candidato = parts[1];
-            const color = parts[2];
-            const img = (parts[3] || '').trim();
-            if (!partido) continue;
+            const municipio = parts[0];
+            const partido = parts[1];
+            const candidato = parts[2];
+            const color = parts[3];
+            const img = (parts[4] || '').trim();
+            if (!partido || municipio !== municipioName) continue;
             CONFIG.partiesData[partido] = { candidato, color, img: img ? `fotos-candidatos/${img}` : '' };
             CONFIG.partyColors[partido] = color;
         }
@@ -697,8 +699,8 @@ async function switchMunicipality(key) {
     // Load totals from municipio GeoJSON (also detects party keys)
     const detectedParties = await loadTotals(key);
 
-    // Load party colors/data (CSV for known parties, auto-generate for others)
-    await loadPartiesData(detectedParties);
+    // Load party colors/data (CSV filtered by municipality, auto-generate for others)
+    await loadPartiesData(key, detectedParties);
 
     // Update layer file paths
     updateLayerPaths(key);
