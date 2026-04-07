@@ -32,7 +32,7 @@ Santa Cruz,SPT,Angelica Sosa,#FED418,sosa.jpg
 Santa Cruz,FE,Soo Hyun Chung,#2FA225,soohyun.webp
 Santa Cruz,UN,Federico Moron,#01017C,moron.png
 Santa Cruz,PATRIA-UNIDOS,Alfredo Solares,#FE4D00,solares.jpg
-Santa Cruz,TODOS,Carlos Subirana,#1AA347,subirana.png
+Santa Cruz,TODOS-,Carlos Subirana,#1AA347,subirana.png
 Santa Cruz,VOS,Manuel Saavedra,#FE0124,mamen.webp
 Santa Cruz,SOL,Oscar Vargas,#FC5600,vargasc.png
 Santa Cruz,UNIDOS,Rosario Schamisseddine,#0087B8,scha.jpg
@@ -40,3 +40,90 @@ Santa Cruz,PSC,Gary Añez,#11BA01,gary.png
 Santa Cruz,MTS,Felix Oros,#27925F,oros.jpeg
 Santa Cruz,A-UPP,Orlando Peña,#E2B319,orlandopena.png
 Santa Cruz,PDC,Rafael Quinteros,#2E6C6D,rquinteros.png
+Sucre,FRI,Juan Antonio Jesus,#7474AC,sucre-FRI.png
+Sucre,A-UPP,Jeyson Auza,#E4CC64,sucre-A-UPP.png
+Sucre,AGN,Fátima Tardío,#8C6CBC,sucre-AGN.png
+Sucre,FUERZA,Cristian Sanabria,#4C9464,sucre-FUERZA.png
+Sucre,PATRIA-UNIDOS,Maria Teresa Dalenz,#5CBCCC,sucre-PATRIA-UNIDOS.png
+Sucre,APB-SUMATE,Erick Pedraza,#BCB4AC,sucre-APB-SUMATE.png
+Sucre,MTS,Richard Moscoso,#C45C84,sucre-MTS.png
+Sucre,NGP,Hebert Terrazas,#E46C6C,sucre-NGP.png
+Sucre,CHR,Enrique Palenque,#AC3C34,sucre-CHR.png
+Sucre,XS-CH,Cecilia Calani,#14243C,sucre-XS-CH.png
+Sucre,LIBRE,Walter Arizaga,#F4C47C,sucre-LIBRE.png
+Oruro,FRI,René Mamani,#7474B4,oruro-FRI.png
+Oruro,LEAL,Adhemar Wilcarani,#6C3C9C,oruro-LEAL.png
+Oruro,NGP,Iván Quispe,#FC5C6C,oruro-NGP.png
+Oruro,AORA,Santiago Condori,#8C544C,oruro-AORA.png
+Oruro,UN,Enrique Urquidi,#DC5C04,oruro-UN.png
+Oruro,A-UPP,Jhonny Pereira,#ECCC4C,oruro-A-UPP.png
+Oruro,MCSFA,Edgar Bazán,#5C548C,oruro-MCSFA.png
+Oruro,APB-SUMATE,,#6C7484,oruro-APB-SUMATE.png
+Oruro,MTS,Oliver Poma,#D45484,oruro-MTS.png
+Oruro,PATRIA-ORURO,Rafael Vargas,#7C7C7C,oruro-PATRIA-ORURO.png
+Oruro,LIBRE,René Guzmán,#FCBC74,oruro-LIBRE.png
+Oruro,P.P.,Luis Carlos Aguilar,#2C9C8C,oruro-P.P..png
+Oruro,SOMOS,Marcelo Cortez,#247CA4,oruro-SOMOS.png
+Oruro,JACHAJAKISASOLFESORC,Marcelo Medina,#B4DC8C,oruro-SASOLEFSORG.png
+Oruro,PDC,Cristhian Tellez,#ECC46C,oruro-PDC.png
+Potosí,A.S.,Leonor Quispe,#E49444,potosi-A.S..png
+Potosí,LIBRE,Gerardo Rua,#F4C47C,potosi-LIBRE.png
+Potosí,PDC,Veridia Bellido,#E4C474,potosi-PDC.png
+Potosí,PATRIA-UNIDOS,Guido Casiano,#5CBCCC,potosi-PATRIA-UNIDOS.png
+Potosí,MTS,Williams Cervantes,#C45C84,potosi-MTS.png
+Potosí,CAOP,Luis Fuertes Villanueva,#3C6494,potosi-CAOP.png
+Potosí,ASCAP,Francisco Pumari,#A47C9C,potosi-ASCAP.png
+Potosí,JAP,Jaime Burgoa,#6434C4,potosi-JAP.png
+Potosí,APB-SUMATE,Armando Iporre,#BCB4AC,potosi-APB-SUMATE.png
+Potosí,DEMOCRATAS,Reynaldo Jarro Salvatierra,#EC6C64,
+Potosí,S-P,Osvaldo Flores,#64A48C,potosi-S.P..png
+Potosí,NGP,Ruth Velasco,#E46C6C,potosi-NGP.png
+Potosí,UN,Rolando Flores,#CC642C,potosi-UN.png
+Potosí,APP,Nelson Gutierrez,#5C7CA4,potosi-APP.png
+Potosí,MNR,Willams Villa,#64548C,potosi-MNR.png
+Potosí,A-UPP,Yessid Isaac Espinoza,#E4CC64,potosi-A-UPP.png
+Tarija,UNIR,,#646C7C,tarija-UNIR.png
+Tarija,PDC,Gustavo Carvajal,#E4C474,tarija-PDC.png
+Tarija,A-UPP,Roberto Gareca,#E4CC64,tarija-A-UPP.png
+Tarija,DEMOCRATAS,Roberto Castillo,#DCDCDC,tarija-DEMOCRATAS.png
+Tarija,ISA,Wilfredo Barrios,#3C74AC,tarija-ISA.png
+Tarija,PATRIA,Luciana Campero,#DC5474,tarija-PATRIA.png
+Tarija,T,Johnny Torres,#547C9C,tarija-T.png
+Tarija,MTS,Ervin Sandro Mancilla,#C45C84,tarija-MTS.png
+Tarija,NGP,Julio Román,#DCDCDC,tarija-NGP.png
+Trinidad,PATRIA-UNIDOS,Mauricio Barba,#1CBCCC,trinidad-PATRIA-UNIDOS.png
+Trinidad,MNR,Moisés Shriqui,#645494,trinidad-MNR.png
+Trinidad,A-UPP,Indira Balcázar,#ECCC4C,trinidad-A-UPP.png
+Trinidad,DESPIERTA,Rodney Mercado,#640C64,trinidad-DESPIERTA.png
+Trinidad,CPEM-B,José Luis Rivero,#DC4474,trinidad-CPEM-B.png
+Trinidad,NGP,Richar Rodríguez,#FC5C6C,trinidad-NGP.png
+Trinidad,TUFE,Mayerling Castedo,#148CB4,trinidad-TUFE.png
+Trinidad,MTS,Victor Quispe,#D45484,trinidad-MTS.png
+Cobija,FSUTCP,Roger Franco,#DCDCDC,cobija-FSUTCP.png
+Cobija,LIBRE-PANDO,Diego Suárez,#CCB4D4,cobija-LIBRE-PANDO.png
+Cobija,UPP,Mirlo Rodríguez,#84EC9C,cobija-UPP.png
+Cobija,MTS,Tetsu Mukay,#D45484,cobija-MTS.png
+Cobija,APB-SUMATE,Priscila Segovia,#BCB4AC,cobija-APB-SUMATE.png
+Cobija,A-UPP,Luis Adolfo Flores,#ECCC4C,cobija-A-UPP.png
+Cobija,NGP,Eduardo Domínguez,#FC5C6C,cobija-NGP.png
+Cobija,FRI,Florencio Cochi,#7474B4,cobija-FRI.png
+Cobija,MNR,Nancy Acuña,#645494,cobija-MNR.png
+Cobija,MDA,Erik David Mollinedo,#FCA404,cobija-MDA.png
+El Alto,UPC,Eliser Roca,#D4FCD4,elalto-UPC.png
+El Alto,LIBRE,Simón Gálvez,#F4C47C,elalto-LIBRE.png
+El Alto,APB-SUMATE,Javier Tarqui,#BCB4AC,elalto-APB-SUMATE.png
+El Alto,M.P.S.,Oscar Chirinos,#945494,elalto-M.P.S..png
+El Alto,JALLALLA LP,Tahiuichi Quispe,#EC9C9C,elalto-JALLALLA LP.png
+El Alto,VIDA,Rury Balladares,#64A4DC,elalto-VIDA.png
+El Alto,UN,Yoacir Calamani,#CC642C,elalto-UN.png
+El Alto,PATRIA-SOL,Néstor Yujra,#BCBC44,elalto-PATRIA-SOL.png
+El Alto,IH,Freddy Mamani,#ACCCE4,elalto-IH.png
+El Alto,ASP,Omar Pati,#D4645C,elalto-ASP.png
+El Alto,A-UPP,Sergio Choque,#E4CC64,elalto-A-UPP.png
+El Alto,MTS,,#D4CCC4,elalto-MTS.png
+El Alto,FRI,Oscar Choque,#7474AC,elalto-FRI.png
+El Alto,SPBC,,#D4CCC4,elalto-SPBC.png
+El Alto,VENCEREMOS,Oscar Huanca,#7CCCDC,elalto-VENCEREMOS.png
+El Alto,PDC,Gabriel Mamani,#E4C474,elalto-PDC.png
+El Alto,NGP,Esteban Pati,#E46C6C,elalto-NGP.png
+El Alto,MNR,Pablo Callizaya,#64548C,elalto-MNR.png
