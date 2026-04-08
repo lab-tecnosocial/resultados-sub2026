@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_esmeralda",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2124.0, "recinto": 32179.0, "NombreRecinto": "Corregimiento de Esmeralda", "MTS": 2.0, "PATRIA-ORURO": 101.0, "votos_totales": 103.0, "VotoBlanco": 1.0, "VotoNulo": 0.0, "InscritosHabilitados": 110.0, "participacion": 93.6, "pct_MTS": 1.9, "pct_PATRIA-ORURO": 98.1, "ganador": "PATRIA-ORURO", "votos_ganador": 101.0, "pct_ganador": 98.1, "partido_2do": "MTS", "votos_2do": 2.0, "pct_2do": 1.9, "margen_victoria": 96.2 }, "geometry": { "type": "Point", "coordinates": [ -68.283665, -18.846325 ] } },
+{ "type": "Feature", "properties": { "asiento": 2125.0, "recinto": 2.0, "NombreRecinto": "U.E. Pedro Domingo Murillo", "MTS": 82.0, "PATRIA-ORURO": 22.0, "votos_totales": 104.0, "VotoBlanco": 2.0, "VotoNulo": 4.0, "InscritosHabilitados": 128.0, "participacion": 81.2, "pct_MTS": 78.8, "pct_PATRIA-ORURO": 21.2, "ganador": "MTS", "votos_ganador": 82.0, "pct_ganador": 78.8, "partido_2do": "PATRIA-ORURO", "votos_2do": 22.0, "pct_2do": 21.2, "margen_victoria": 57.6 }, "geometry": { "type": "Point", "coordinates": [ -68.208959, -18.913628 ] } },
+{ "type": "Feature", "properties": { "asiento": 2126.0, "recinto": 32086.0, "NombreRecinto": "Corregimiento de Peña Peñani", "MTS": 0.0, "PATRIA-ORURO": 69.0, "votos_totales": 69.0, "VotoBlanco": 1.0, "VotoNulo": 2.0, "InscritosHabilitados": 73.0, "participacion": 94.5, "pct_MTS": 0.0, "pct_PATRIA-ORURO": 100.0, "ganador": "PATRIA-ORURO", "votos_ganador": 69.0, "pct_ganador": 100.0, "partido_2do": "MTS", "votos_2do": 0.0, "pct_2do": 0.0, "margen_victoria": 100.0 }, "geometry": { "type": "Point", "coordinates": [ -67.939841, -18.928932 ] } },
+{ "type": "Feature", "properties": { "asiento": 2790.0, "recinto": 2.0, "NombreRecinto": "Esc. Sebastian Pagador", "MTS": 103.0, "PATRIA-ORURO": 58.0, "votos_totales": 161.0, "VotoBlanco": 7.0, "VotoNulo": 5.0, "InscritosHabilitados": 196.0, "participacion": 82.1, "pct_MTS": 64.0, "pct_PATRIA-ORURO": 36.0, "ganador": "MTS", "votos_ganador": 103.0, "pct_ganador": 64.0, "partido_2do": "PATRIA-ORURO", "votos_2do": 58.0, "pct_2do": 36.0, "margen_victoria": 28.0 }, "geometry": { "type": "Point", "coordinates": [ -68.252786, -18.882432 ] } }
+]
+}

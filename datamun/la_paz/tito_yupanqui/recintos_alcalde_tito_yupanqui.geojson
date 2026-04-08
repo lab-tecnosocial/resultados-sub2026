@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_tito_yupanqui",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 663.0, "recinto": 2312.0, "NombreRecinto": "Colegio Nacional Mixto Tito Yupanqui", "ASLP": 223.0, "PDC": 264.0, "ASP": 171.0, "FRI": 35.0, "UPC": 136.0, "LIBRE": 137.0, "votos_totales": 966.0, "VotoBlanco": 26.0, "VotoNulo": 85.0, "InscritosHabilitados": 1193.0, "participacion": 81.0, "pct_ASLP": 23.1, "pct_PDC": 27.3, "pct_ASP": 17.7, "pct_FRI": 3.6, "pct_UPC": 14.1, "pct_LIBRE": 14.2, "ganador": "PDC", "votos_ganador": 264.0, "pct_ganador": 27.3, "partido_2do": "ASLP", "votos_2do": 223.0, "pct_2do": 23.1, "margen_victoria": 4.2 }, "geometry": { "type": "Point", "coordinates": [ -68.95449, -16.19247 ] } },
+{ "type": "Feature", "properties": { "asiento": 664.0, "recinto": 312.0, "NombreRecinto": "Escuela Huatapampa", "ASLP": 96.0, "PDC": 36.0, "ASP": 49.0, "FRI": 0.0, "UPC": 9.0, "LIBRE": 10.0, "votos_totales": 200.0, "VotoBlanco": 1.0, "VotoNulo": 7.0, "InscritosHabilitados": 233.0, "participacion": 85.8, "pct_ASLP": 48.0, "pct_PDC": 18.0, "pct_ASP": 24.5, "pct_FRI": 0.0, "pct_UPC": 4.5, "pct_LIBRE": 5.0, "ganador": "ASLP", "votos_ganador": 96.0, "pct_ganador": 48.0, "partido_2do": "ASP", "votos_2do": 49.0, "pct_2do": 24.5, "margen_victoria": 23.5 }, "geometry": { "type": "Point", "coordinates": [ -68.95433, -16.17676 ] } }
+]
+}

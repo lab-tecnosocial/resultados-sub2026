@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_san_ramon",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2476.0, "recinto": 8.0, "NombreRecinto": "Esc. Central San Ramon", "TODOS-": 272.0, "CREEMOS": 803.0, "PATRIA-UNIDOS": 267.0, "A-UPP": 1286.0, "votos_totales": 2628.0, "VotoBlanco": 63.0, "VotoNulo": 167.0, "InscritosHabilitados": 3335.0, "participacion": 78.8, "pct_TODOS-": 10.4, "pct_CREEMOS": 30.6, "pct_PATRIA-UNIDOS": 10.2, "pct_A-UPP": 48.9, "ganador": "A-UPP", "votos_ganador": 1286.0, "pct_ganador": 48.9, "partido_2do": "CREEMOS", "votos_2do": 803.0, "pct_2do": 30.6, "margen_victoria": 18.3 }, "geometry": { "type": "Point", "coordinates": [ -62.499674, -16.614964 ] } },
+{ "type": "Feature", "properties": { "asiento": 2476.0, "recinto": 26428.0, "NombreRecinto": "U.E. Padre Ricardo Erl Huber", "TODOS-": 224.0, "CREEMOS": 530.0, "PATRIA-UNIDOS": 184.0, "A-UPP": 734.0, "votos_totales": 1672.0, "VotoBlanco": 31.0, "VotoNulo": 128.0, "InscritosHabilitados": 2073.0, "participacion": 80.7, "pct_TODOS-": 13.4, "pct_CREEMOS": 31.7, "pct_PATRIA-UNIDOS": 11.0, "pct_A-UPP": 43.9, "ganador": "A-UPP", "votos_ganador": 734.0, "pct_ganador": 43.9, "partido_2do": "CREEMOS", "votos_2do": 530.0, "pct_2do": 31.7, "margen_victoria": 12.2 }, "geometry": { "type": "Point", "coordinates": [ -62.493932, -16.61454 ] } },
+{ "type": "Feature", "properties": { "asiento": 2853.0, "recinto": 22.0, "NombreRecinto": "Esc. Santa Rosa De La Mina", "TODOS-": 73.0, "CREEMOS": 59.0, "PATRIA-UNIDOS": 19.0, "A-UPP": 47.0, "votos_totales": 198.0, "VotoBlanco": 14.0, "VotoNulo": 14.0, "InscritosHabilitados": 258.0, "participacion": 76.7, "pct_TODOS-": 36.9, "pct_CREEMOS": 29.8, "pct_PATRIA-UNIDOS": 9.6, "pct_A-UPP": 23.7, "ganador": "TODOS-", "votos_ganador": 73.0, "pct_ganador": 36.9, "partido_2do": "CREEMOS", "votos_2do": 59.0, "pct_2do": 29.8, "margen_victoria": 7.1 }, "geometry": { "type": "Point", "coordinates": [ -62.46406, -16.54375 ] } }
+]
+}

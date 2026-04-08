@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_waldo_ballivian",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 187.0, "recinto": 25777.0, "NombreRecinto": "U.E. Antofagasta", "UPC": 422.0, "PATRIA-SOL": 211.0, "MTS": 147.0, "JALLALLA LP": 171.0, "votos_totales": 951.0, "VotoBlanco": 27.0, "VotoNulo": 88.0, "InscritosHabilitados": 1208.0, "participacion": 78.7, "pct_UPC": 44.4, "pct_PATRIA-SOL": 22.2, "pct_MTS": 15.5, "pct_JALLALLA LP": 18.0, "ganador": "UPC", "votos_ganador": 422.0, "pct_ganador": 44.4, "partido_2do": "PATRIA-SOL", "votos_2do": 211.0, "pct_2do": 22.2, "margen_victoria": 22.2 }, "geometry": { "type": "Point", "coordinates": [ -68.18724, -17.085376 ] } }
+]
+}

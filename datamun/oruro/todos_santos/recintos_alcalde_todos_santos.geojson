@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_todos_santos",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2223.0, "recinto": 2.0, "NombreRecinto": "U.E. Eduardo Avaroa", "PATRIA-ORURO": 197.0, "votos_totales": 197.0, "VotoBlanco": 26.0, "VotoNulo": 10.0, "InscritosHabilitados": 290.0, "participacion": 67.9, "pct_PATRIA-ORURO": 100.0, "ganador": "PATRIA-ORURO", "votos_ganador": 197.0, "pct_ganador": 100.0, "partido_2do": "PATRIA-ORURO", "votos_2do": 197.0, "pct_2do": 100.0, "margen_victoria": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -68.719573, -19.015235 ] } }
+]
+}

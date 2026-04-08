@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "municipio_alcalde_tito_yupanqui",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Municipality": "Tito Yupanqui", "ADM3_PCODE": "BO021703", "Province": "Manco Kapac", "Department": "La Paz", "ADM0_ES": "Bolivia (Estado Plurinacional de)", "area_ha": 1305, "ASLP": 319.0, "PDC": 300.0, "ASP": 220.0, "FRI": 35.0, "UPC": 145.0, "LIBRE": 147.0, "votos_totales": 1166.0, "InscritosHabilitados": 1426.0, "participacion": 81.8, "pct_ASLP": 27.4, "pct_PDC": 25.7, "pct_ASP": 18.9, "pct_FRI": 3.0, "pct_UPC": 12.4, "pct_LIBRE": 12.6, "ganador": "ASLP", "votos_ganador": 319.0, "pct_ganador": 27.4, "partido_2do": "PDC", "votos_2do": 300.0, "pct_2do": 25.7, "margen_victoria": 1.7 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -68.924884, -16.186423 ], [ -68.932687, -16.184414 ], [ -68.941085, -16.179848 ], [ -68.946748, -16.180687 ], [ -68.952749, -16.17434 ], [ -68.954877, -16.17678 ], [ -68.960169, -16.174413 ], [ -68.96121, -16.168295 ], [ -68.968745, -16.154938 ], [ -68.975891, -16.158926 ], [ -68.982704, -16.159192 ], [ -68.985646, -16.161843 ], [ -68.979803, -16.170227 ], [ -68.975719, -16.17904 ], [ -68.97453, -16.186694 ], [ -68.975918, -16.192536 ], [ -68.964747, -16.193023 ], [ -68.959245, -16.196491 ], [ -68.953599, -16.194743 ], [ -68.942337, -16.193936 ], [ -68.933534, -16.197735 ], [ -68.924884, -16.186423 ] ] ] ] } }
+]
+}

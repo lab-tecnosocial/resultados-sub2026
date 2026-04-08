@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_pampa_aullagas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2159.0, "recinto": 2.0, "NombreRecinto": "Esc. Maria Sanchez Fernandez", "JACHAJAKISASOLFESORC": 389.0, "PDC": 488.0, "votos_totales": 877.0, "VotoBlanco": 43.0, "VotoNulo": 87.0, "InscritosHabilitados": 1167.0, "participacion": 75.1, "pct_JACHAJAKISASOLFESORC": 44.4, "pct_PDC": 55.6, "ganador": "PDC", "votos_ganador": 488.0, "pct_ganador": 55.6, "partido_2do": "JACHAJAKISASOLFESORC", "votos_2do": 389.0, "pct_2do": 44.4, "margen_victoria": 11.2 }, "geometry": { "type": "Point", "coordinates": [ -67.060186, -19.195773 ] } },
+{ "type": "Feature", "properties": { "asiento": 2160.0, "recinto": 2.0, "NombreRecinto": "U.E. Gualberto Villarroel", "JACHAJAKISASOLFESORC": 47.0, "PDC": 148.0, "votos_totales": 195.0, "VotoBlanco": 7.0, "VotoNulo": 23.0, "InscritosHabilitados": 263.0, "participacion": 74.1, "pct_JACHAJAKISASOLFESORC": 24.1, "pct_PDC": 75.9, "ganador": "PDC", "votos_ganador": 148.0, "pct_ganador": 75.9, "partido_2do": "JACHAJAKISASOLFESORC", "votos_2do": 47.0, "pct_2do": 24.1, "margen_victoria": 51.8 }, "geometry": { "type": "Point", "coordinates": [ -67.063199, -19.28341 ] } },
+{ "type": "Feature", "properties": { "asiento": 2161.0, "recinto": 2.0, "NombreRecinto": "Esc. Franz Tamayo", "JACHAJAKISASOLFESORC": 21.0, "PDC": 76.0, "votos_totales": 97.0, "VotoBlanco": 3.0, "VotoNulo": 10.0, "InscritosHabilitados": 124.0, "participacion": 78.2, "pct_JACHAJAKISASOLFESORC": 21.6, "pct_PDC": 78.4, "ganador": "PDC", "votos_ganador": 76.0, "pct_ganador": 78.4, "partido_2do": "JACHAJAKISASOLFESORC", "votos_2do": 21.0, "pct_2do": 21.6, "margen_victoria": 56.8 }, "geometry": { "type": "Point", "coordinates": [ -67.146793, -19.404759 ] } }
+]
+}

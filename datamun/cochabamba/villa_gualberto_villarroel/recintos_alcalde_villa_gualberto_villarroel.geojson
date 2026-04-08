@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_villa_gualberto_villarroel",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 1086.0, "recinto": 1413.0, "NombreRecinto": "Escuela Cuchu Muela", "MTS": 172.0, "UNIDOS-": 246.0, "PDC": 95.0, "votos_totales": 513.0, "VotoBlanco": 11.0, "VotoNulo": 67.0, "InscritosHabilitados": 667.0, "participacion": 76.9, "pct_MTS": 33.5, "pct_UNIDOS-": 48.0, "pct_PDC": 18.5, "ganador": "UNIDOS-", "votos_ganador": 246.0, "pct_ganador": 48.0, "partido_2do": "MTS", "votos_2do": 172.0, "pct_2do": 33.5, "margen_victoria": 14.5 }, "geometry": { "type": "Point", "coordinates": [ -65.7949, -17.652 ] } },
+{ "type": "Feature", "properties": { "asiento": 1087.0, "recinto": 1414.0, "NombreRecinto": "Nucleo Escolar Yana Rumi", "MTS": 31.0, "UNIDOS-": 122.0, "PDC": 29.0, "votos_totales": 182.0, "VotoBlanco": 4.0, "VotoNulo": 21.0, "InscritosHabilitados": 234.0, "participacion": 77.8, "pct_MTS": 17.0, "pct_UNIDOS-": 67.0, "pct_PDC": 15.9, "ganador": "UNIDOS-", "votos_ganador": 122.0, "pct_ganador": 67.0, "partido_2do": "MTS", "votos_2do": 31.0, "pct_2do": 17.0, "margen_victoria": 50.0 }, "geometry": { "type": "Point", "coordinates": [ -65.7485, -17.7019 ] } }
+]
+}

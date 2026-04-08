@@ -39,22 +39,14 @@
     <div class="controls-container">
         <h2 class="controls-title">Mapa de resultados electorales</h2>
         <p id="controls-subtitle" class="controls-subtitle">Bolivia - Alcaldias 2026</p>
-        <p class="controls-info">Selecciona un punto o municipio para ver los resultados</p>
-        <div class="selector-wrapper">
-            <label for="municipality-select">Municipio</label>
-            <select id="municipality-select">
-                <option value="">-- Selecciona un municipio --</option>
-                <option value="la-paz">La Paz</option>
-                <option value="cochabamba">Cochabamba</option>
-                <option value="santa-cruz">Santa Cruz</option>
-                <option value="el-alto">El Alto</option>
-                <option value="oruro">Oruro</option>
-                <option value="potosi">Potosí</option>
-                <option value="sucre">Sucre</option>
-                <option value="tarija">Tarija</option>
-                <option value="trinidad">Trinidad</option>
-                <option value="cobija">Cobija</option>
-            </select>
+        <p class="controls-info">Busca un municipio o haz click en la región</p>
+        <div class="selector-wrapper search-wrapper">
+            <label for="municipality-search">Municipio</label>
+            <div class="search-input-container">
+                <input type="text" id="municipality-search" placeholder="Buscar municipio..." autocomplete="off"
+                    spellcheck="false">
+                <div id="search-results" class="search-results" style="display:none;"></div>
+            </div>
         </div>
         <div id="layer-select-wrapper" class="selector-wrapper">
             <label for="layer-select">Seleccionar capa</label>
@@ -69,8 +61,8 @@
     <div id="legend" class="legend"></div>
 
     <div class="credit">
-        <div>Desarrollado por <a href="https://labtecnosocial.org/" target="_blank" rel="noopener noreferrer">Lab
-                TecnoSocial</a></div>
+        <div>Desarrollado por <a href="https://labtecnosocial.org/" target="_blank" rel="noopener noreferrer"><img
+                    src="logo-lab.webp" alt="Lab TecnoSocial" style="height:24px;vertical-align:middle;"></a></div>
         <div><a href="fuentes.html">Fuentes de datos</a></div>
     </div>
 

@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_choquecota",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2107.0, "recinto": 2.0, "NombreRecinto": "Esc. Jose Ballivian", "JACHAJAKISASOLFESORC": 173.0, "PDC": 156.0, "AORA": 143.0, "votos_totales": 472.0, "VotoBlanco": 16.0, "VotoNulo": 16.0, "InscritosHabilitados": 594.0, "participacion": 79.5, "pct_JACHAJAKISASOLFESORC": 36.7, "pct_PDC": 33.1, "pct_AORA": 30.3, "ganador": "JACHAJAKISASOLFESORC", "votos_ganador": 173.0, "pct_ganador": 36.7, "partido_2do": "PDC", "votos_2do": 156.0, "pct_2do": 33.1, "margen_victoria": 3.6 }, "geometry": { "type": "Point", "coordinates": [ -67.89426, -18.09751 ] } },
+{ "type": "Feature", "properties": { "asiento": 2809.0, "recinto": 2.0, "NombreRecinto": "U.E. Andapata", "JACHAJAKISASOLFESORC": 37.0, "PDC": 24.0, "AORA": 9.0, "votos_totales": 70.0, "VotoBlanco": 1.0, "VotoNulo": 9.0, "InscritosHabilitados": 92.0, "participacion": 76.1, "pct_JACHAJAKISASOLFESORC": 52.9, "pct_PDC": 34.3, "pct_AORA": 12.9, "ganador": "JACHAJAKISASOLFESORC", "votos_ganador": 37.0, "pct_ganador": 52.9, "partido_2do": "PDC", "votos_2do": 24.0, "pct_2do": 34.3, "margen_victoria": 18.6 }, "geometry": { "type": "Point", "coordinates": [ -67.980192, -18.249368 ] } }
+]
+}

@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_colquencha",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 601.0, "recinto": 25798.0, "NombreRecinto": "U.E. Nacional Litoral", "MTS": 428.0, "VIDA": 1343.0, "votos_totales": 1771.0, "VotoBlanco": 68.0, "VotoNulo": 163.0, "InscritosHabilitados": 2268.0, "participacion": 78.1, "pct_MTS": 24.2, "pct_VIDA": 75.8, "ganador": "VIDA", "votos_ganador": 1343.0, "pct_ganador": 75.8, "partido_2do": "MTS", "votos_2do": 428.0, "pct_2do": 24.2, "margen_victoria": 51.6 }, "geometry": { "type": "Point", "coordinates": [ -68.245253, -16.930873 ] } },
+{ "type": "Feature", "properties": { "asiento": 603.0, "recinto": 2866.0, "NombreRecinto": "Escuela Litoral", "MTS": 32.0, "VIDA": 141.0, "votos_totales": 173.0, "VotoBlanco": 10.0, "VotoNulo": 12.0, "InscritosHabilitados": 208.0, "participacion": 83.2, "pct_MTS": 18.5, "pct_VIDA": 81.5, "ganador": "VIDA", "votos_ganador": 141.0, "pct_ganador": 81.5, "partido_2do": "MTS", "votos_2do": 32.0, "pct_2do": 18.5, "margen_victoria": 63.0 }, "geometry": { "type": "Point", "coordinates": [ -68.22531, -16.95084 ] } },
+{ "type": "Feature", "properties": { "asiento": 604.0, "recinto": 25799.0, "NombreRecinto": "U.E. Tte. Cnel. Max Toledo", "MTS": 427.0, "VIDA": 431.0, "votos_totales": 858.0, "VotoBlanco": 201.0, "VotoNulo": 64.0, "InscritosHabilitados": 1177.0, "participacion": 72.9, "pct_MTS": 49.8, "pct_VIDA": 50.2, "ganador": "VIDA", "votos_ganador": 431.0, "pct_ganador": 50.2, "partido_2do": "MTS", "votos_2do": 427.0, "pct_2do": 49.8, "margen_victoria": 0.4 }, "geometry": { "type": "Point", "coordinates": [ -68.263974, -16.917509 ] } },
+{ "type": "Feature", "properties": { "asiento": 605.0, "recinto": 2873.0, "NombreRecinto": "Esc. Ladislao Cabrera", "MTS": 459.0, "VIDA": 257.0, "votos_totales": 716.0, "VotoBlanco": 75.0, "VotoNulo": 116.0, "InscritosHabilitados": 1004.0, "participacion": 71.3, "pct_MTS": 64.1, "pct_VIDA": 35.9, "ganador": "MTS", "votos_ganador": 459.0, "pct_ganador": 64.1, "partido_2do": "VIDA", "votos_2do": 257.0, "pct_2do": 35.9, "margen_victoria": 28.2 }, "geometry": { "type": "Point", "coordinates": [ -68.20877, -16.87736 ] } }
+]
+}

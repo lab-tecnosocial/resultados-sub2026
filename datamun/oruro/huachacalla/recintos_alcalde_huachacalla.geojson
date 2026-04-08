@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_huachacalla",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2117.0, "recinto": 2.0, "NombreRecinto": "U. E. Narciso Campero", "JACHAJAKISASOLFESORC": 526.0, "PATRIA-ORURO": 234.0, "votos_totales": 760.0, "VotoBlanco": 49.0, "VotoNulo": 46.0, "InscritosHabilitados": 1307.0, "participacion": 58.1, "pct_JACHAJAKISASOLFESORC": 69.2, "pct_PATRIA-ORURO": 30.8, "ganador": "JACHAJAKISASOLFESORC", "votos_ganador": 526.0, "pct_ganador": 69.2, "partido_2do": "PATRIA-ORURO", "votos_2do": 234.0, "pct_2do": 30.8, "margen_victoria": 38.4 }, "geometry": { "type": "Point", "coordinates": [ -68.263726, -18.79467 ] } }
+]
+}

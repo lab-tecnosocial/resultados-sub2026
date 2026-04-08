@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_villa_libertad_licoma",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 454.0, "recinto": 2641.0, "NombreRecinto": "Escuela Eliodoro Camacho", "UPC": 43.0, "M.P.S.": 316.0, "VENCEREMOS": 71.0, "IH": 284.0, "PATRIA-SOL": 81.0, "JALLALLA LP": 184.0, "votos_totales": 979.0, "VotoBlanco": 42.0, "VotoNulo": 72.0, "InscritosHabilitados": 1238.0, "participacion": 79.1, "pct_UPC": 4.4, "pct_M.P.S.": 32.3, "pct_VENCEREMOS": 7.3, "pct_IH": 29.0, "pct_PATRIA-SOL": 8.3, "pct_JALLALLA LP": 18.8, "ganador": "M.P.S.", "votos_ganador": 316.0, "pct_ganador": 32.3, "partido_2do": "IH", "votos_2do": 284.0, "pct_2do": 29.0, "margen_victoria": 3.3 }, "geometry": { "type": "Point", "coordinates": [ -67.204004, -16.804967 ] } },
+{ "type": "Feature", "properties": { "asiento": 455.0, "recinto": 2642.0, "NombreRecinto": "Escuela Mixta Charapaxi", "UPC": 10.0, "M.P.S.": 59.0, "VENCEREMOS": 17.0, "IH": 20.0, "PATRIA-SOL": 29.0, "JALLALLA LP": 17.0, "votos_totales": 152.0, "VotoBlanco": 10.0, "VotoNulo": 11.0, "InscritosHabilitados": 197.0, "participacion": 77.2, "pct_UPC": 6.6, "pct_M.P.S.": 38.8, "pct_VENCEREMOS": 11.2, "pct_IH": 13.2, "pct_PATRIA-SOL": 19.1, "pct_JALLALLA LP": 11.2, "ganador": "M.P.S.", "votos_ganador": 59.0, "pct_ganador": 38.8, "partido_2do": "PATRIA-SOL", "votos_2do": 29.0, "pct_2do": 19.1, "margen_victoria": 19.7 }, "geometry": { "type": "Point", "coordinates": [ -67.1801, -16.84146 ] } }
+]
+}

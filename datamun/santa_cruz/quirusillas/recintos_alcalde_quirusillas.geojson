@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_quirusillas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2439.0, "recinto": 15010.0, "NombreRecinto": "Esc. Nestor Paz Zamora", "DEMOCRATAS": 563.0, "PATRIA-UNIDOS": 436.0, "votos_totales": 999.0, "VotoBlanco": 26.0, "VotoNulo": 44.0, "InscritosHabilitados": 1184.0, "participacion": 84.4, "pct_DEMOCRATAS": 56.4, "pct_PATRIA-UNIDOS": 43.6, "ganador": "DEMOCRATAS", "votos_ganador": 563.0, "pct_ganador": 56.4, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 436.0, "pct_2do": 43.6, "margen_victoria": 12.8 }, "geometry": { "type": "Point", "coordinates": [ -63.947953, -18.334068 ] } }
+]
+}

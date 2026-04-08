@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_villa_rivero",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 1079.0, "recinto": 1406.0, "NombreRecinto": "Escuela Gualberto Villarroel (V. Rivero)", "A-UPP": 375.0, "UNIDOS-": 663.0, "NGP": 566.0, "votos_totales": 1604.0, "VotoBlanco": 68.0, "VotoNulo": 156.0, "InscritosHabilitados": 2081.0, "participacion": 77.1, "pct_A-UPP": 23.4, "pct_UNIDOS-": 41.3, "pct_NGP": 35.3, "ganador": "UNIDOS-", "votos_ganador": 663.0, "pct_ganador": 41.3, "partido_2do": "NGP", "votos_2do": 566.0, "pct_2do": 35.3, "margen_victoria": 6.0 }, "geometry": { "type": "Point", "coordinates": [ -65.817, -17.6148 ] } },
+{ "type": "Feature", "properties": { "asiento": 3668.0, "recinto": 1.0, "NombreRecinto": "Col. Tec. Ind. Comunitario Marcelo Quiroga", "A-UPP": 556.0, "UNIDOS-": 179.0, "NGP": 972.0, "votos_totales": 1707.0, "VotoBlanco": 90.0, "VotoNulo": 200.0, "InscritosHabilitados": 2405.0, "participacion": 71.0, "pct_A-UPP": 32.6, "pct_UNIDOS-": 10.5, "pct_NGP": 56.9, "ganador": "NGP", "votos_ganador": 972.0, "pct_ganador": 56.9, "partido_2do": "A-UPP", "votos_2do": 556.0, "pct_2do": 32.6, "margen_victoria": 24.3 }, "geometry": { "type": "Point", "coordinates": [ -65.8789, -17.605 ] } },
+{ "type": "Feature", "properties": { "asiento": 3668.0, "recinto": 2.0, "NombreRecinto": "Unidad Educativa Martín Cárdenas Hermoso", "A-UPP": 99.0, "UNIDOS-": 11.0, "NGP": 270.0, "votos_totales": 380.0, "VotoBlanco": 12.0, "VotoNulo": 32.0, "InscritosHabilitados": 505.0, "participacion": 75.2, "pct_A-UPP": 26.1, "pct_UNIDOS-": 2.9, "pct_NGP": 71.1, "ganador": "NGP", "votos_ganador": 270.0, "pct_ganador": 71.1, "partido_2do": "A-UPP", "votos_2do": 99.0, "pct_2do": 26.1, "margen_victoria": 45.0 }, "geometry": { "type": "Point", "coordinates": [ -65.8646, -17.6257 ] } }
+]
+}

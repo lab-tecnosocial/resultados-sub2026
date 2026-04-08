@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "municipio_alcalde_tacachi",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Municipality": "Tacachi", "ADM3_PCODE": "BO031404", "Province": "Punata", "Department": "Cochabamba", "ADM0_ES": "Bolivia (Estado Plurinacional de)", "area_ha": 1981, "PDC": 226.0, "PATRIA-UNIDOS": 229.0, "NGP": 174.0, "votos_totales": 629.0, "InscritosHabilitados": 759.0, "participacion": 82.9, "pct_PDC": 35.9, "pct_PATRIA-UNIDOS": 36.4, "pct_NGP": 27.7, "ganador": "PATRIA-UNIDOS", "votos_ganador": 229.0, "pct_ganador": 36.4, "partido_2do": "PDC", "votos_2do": 226.0, "pct_2do": 35.9, "margen_victoria": 0.5 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ -65.744773, -17.645547 ], [ -65.756007, -17.635907 ], [ -65.766545, -17.629612 ], [ -65.778224, -17.62099 ], [ -65.793408, -17.610908 ], [ -65.798993, -17.616002 ], [ -65.806944, -17.627472 ], [ -65.80599, -17.638446 ], [ -65.819109, -17.641504 ], [ -65.820925, -17.651061 ], [ -65.823463, -17.657374 ], [ -65.822802, -17.66624 ], [ -65.818246, -17.667836 ], [ -65.814326, -17.665511 ], [ -65.810231, -17.657199 ], [ -65.808892, -17.649286 ], [ -65.792872, -17.645232 ], [ -65.785776, -17.646996 ], [ -65.775679, -17.646708 ], [ -65.764761, -17.649673 ], [ -65.756436, -17.649702 ], [ -65.749539, -17.648437 ], [ -65.744773, -17.645547 ] ] ] ] } }
+]
+}

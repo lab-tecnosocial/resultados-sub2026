@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_curahuara_de_carangas",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2108.0, "recinto": 32083.0, "NombreRecinto": "U. E. Elizardo Pérez", "AORA": 316.0, "MTS": 600.0, "A-UPP": 303.0, "votos_totales": 1219.0, "VotoBlanco": 56.0, "VotoNulo": 149.0, "InscritosHabilitados": 2082.0, "participacion": 58.5, "pct_AORA": 25.9, "pct_MTS": 49.2, "pct_A-UPP": 24.9, "ganador": "MTS", "votos_ganador": 600.0, "pct_ganador": 49.2, "partido_2do": "AORA", "votos_2do": 316.0, "pct_2do": 25.9, "margen_victoria": 23.3 }, "geometry": { "type": "Point", "coordinates": [ -68.413343, -17.839138 ] } },
+{ "type": "Feature", "properties": { "asiento": 2109.0, "recinto": 2.0, "NombreRecinto": "Col. Bolivia", "AORA": 70.0, "MTS": 54.0, "A-UPP": 5.0, "votos_totales": 129.0, "VotoBlanco": 7.0, "VotoNulo": 21.0, "InscritosHabilitados": 196.0, "participacion": 65.8, "pct_AORA": 54.3, "pct_MTS": 41.9, "pct_A-UPP": 3.9, "ganador": "AORA", "votos_ganador": 70.0, "pct_ganador": 54.3, "partido_2do": "MTS", "votos_2do": 54.0, "pct_2do": 41.9, "margen_victoria": 12.4 }, "geometry": { "type": "Point", "coordinates": [ -68.974164, -18.136259 ] } },
+{ "type": "Feature", "properties": { "asiento": 2110.0, "recinto": 2.0, "NombreRecinto": "U.E. Hacia El Mar", "AORA": 6.0, "MTS": 55.0, "A-UPP": 13.0, "votos_totales": 74.0, "VotoBlanco": 1.0, "VotoNulo": 0.0, "InscritosHabilitados": 81.0, "participacion": 91.4, "pct_AORA": 8.1, "pct_MTS": 74.3, "pct_A-UPP": 17.6, "ganador": "MTS", "votos_ganador": 55.0, "pct_ganador": 74.3, "partido_2do": "A-UPP", "votos_2do": 13.0, "pct_2do": 17.6, "margen_victoria": 56.7 }, "geometry": { "type": "Point", "coordinates": [ -68.83837, -18.00538 ] } },
+{ "type": "Feature", "properties": { "asiento": 2111.0, "recinto": 2.0, "NombreRecinto": "U.E. Litoral B", "AORA": 20.0, "MTS": 78.0, "A-UPP": 16.0, "votos_totales": 114.0, "VotoBlanco": 23.0, "VotoNulo": 10.0, "InscritosHabilitados": 176.0, "participacion": 64.8, "pct_AORA": 17.5, "pct_MTS": 68.4, "pct_A-UPP": 14.0, "ganador": "MTS", "votos_ganador": 78.0, "pct_ganador": 68.4, "partido_2do": "AORA", "votos_2do": 20.0, "pct_2do": 17.5, "margen_victoria": 50.9 }, "geometry": { "type": "Point", "coordinates": [ -68.93645, -18.2223 ] } }
+]
+}

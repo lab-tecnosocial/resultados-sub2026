@@ -1,18 +1,67 @@
 // Legend collapse state
 let legendCollapsed = false;
 
-// Municipality configuration
-const MUNICIPALITIES_CONFIG = {
-    'cochabamba': { name: 'Cochabamba', coords: [-17.3895, -66.1568], zoom: { m: 11, d: 12 }, folder: 'cochabamba', fileSuffix: 'cochabamba' },
-    'la-paz': { name: 'La Paz', coords: [-16.4897, -68.1193], zoom: { m: 12, d: 13 }, folder: 'la-paz', fileSuffix: 'la_paz' },
-    'el-alto': { name: 'El Alto', coords: [-16.5056, -68.1933], zoom: { m: 12, d: 13 }, folder: 'el-alto', fileSuffix: 'el_alto' },
-    'santa-cruz': { name: 'Santa Cruz', coords: [-17.7833, -63.1822], zoom: { m: 11, d: 12 }, folder: 'santa-cruz', fileSuffix: 'santa_cruz' },
-    'oruro': { name: 'Oruro', coords: [-17.9667, -67.1167], zoom: { m: 12, d: 13 }, folder: 'oruro', fileSuffix: 'oruro' },
-    'potosi': { name: 'Potosí', coords: [-19.5836, -65.7531], zoom: { m: 12, d: 13 }, folder: 'potosi', fileSuffix: 'potosi' },
-    'sucre': { name: 'Sucre', coords: [-19.0430, -65.2592], zoom: { m: 12, d: 13 }, folder: 'sucre', fileSuffix: 'sucre' },
-    'tarija': { name: 'Tarija', coords: [-21.5237, -64.7296], zoom: { m: 12, d: 13 }, folder: 'tarija', fileSuffix: 'tarija' },
-    'trinidad': { name: 'Trinidad', coords: [-14.8333, -64.9000], zoom: { m: 12, d: 13 }, folder: 'trinidad', fileSuffix: 'trinidad' },
-    'cobija': { name: 'Cobija', coords: [-11.0280, -68.7697], zoom: { m: 12, d: 13 }, folder: 'cobija', fileSuffix: 'cobija' },
+// Capital municipality ADM3_PCODEs — have custom colors, photos, and may have distritos
+const CAPITAL_PCODES = new Set([
+    'BO030101', // Cochabamba
+    'BO020101', // Nuestra Señora de La Paz (La Paz)
+    'BO020105', // El Alto
+    'BO070101', // Santa Cruz de La Sierra
+    'BO040101', // Oruro
+    'BO050101', // Potosí
+    'BO010101', // Sucre
+    'BO060101', // Tarija
+    'BO080101', // Trinidad
+    'BO090101', // Cobija
+]);
+
+// Zoom levels for capital municipalities (others use fitBounds)
+const CAPITAL_ZOOM = {
+    'BO030101': { m: 11, d: 12 },
+    'BO020101': { m: 12, d: 13 },
+    'BO020105': { m: 12, d: 13 },
+    'BO070101': { m: 11, d: 12 },
+    'BO040101': { m: 12, d: 13 },
+    'BO050101': { m: 12, d: 13 },
+    'BO010101': { m: 12, d: 13 },
+    'BO060101': { m: 12, d: 13 },
+    'BO080101': { m: 12, d: 13 },
+    'BO090101': { m: 12, d: 13 },
+};
+
+// Coords for capitals (center of municipality)
+const CAPITAL_COORDS = {
+    'BO030101': [-17.3895, -66.1568],
+    'BO020101': [-16.4897, -68.1193],
+    'BO020105': [-16.5056, -68.1933],
+    'BO070101': [-17.7833, -63.1822],
+    'BO040101': [-17.9667, -67.1167],
+    'BO050101': [-19.5836, -65.7531],
+    'BO010101': [-19.0430, -65.2592],
+    'BO060101': [-21.5237, -64.7296],
+    'BO080101': [-14.8333, -64.9000],
+    'BO090101': [-11.0280, -68.7697],
+};
+
+// CSV municipality name for capitals (CSV uses shorter names than geojson)
+const CAPITAL_CSV_NAMES = {
+    'BO030101': 'Cochabamba',
+    'BO020101': 'La Paz',
+    'BO020105': 'El Alto',
+    'BO070101': 'Santa Cruz',
+    'BO040101': 'Oruro',
+    'BO050101': 'Potosí',
+    'BO010101': 'Sucre',
+    'BO060101': 'Tarija',
+    'BO080101': 'Trinidad',
+    'BO090101': 'Cobija',
+};
+
+// Override folder paths for municipalities whose names don't normalize correctly
+const FOLDER_OVERRIDES = {
+    'BO020101': { dept: 'la_paz', mun: 'nuestra_senora_de_la_paz' },
+    'BO070101': { dept: 'santa_cruz', mun: 'santa_cruz_de_la_sierra' },
+    'BO021801': { dept: 'la_paz', mun: 'san_pedro_de_curahuara' }, // "San Pedro Cuarahuara" → san_pedro_de_curahuara
 };
 
 // Configuration
@@ -39,9 +88,7 @@ const map = L.map('map', {
     minZoom: 5
 }).setView([-16.5, -65.0], 6);
 
-L.control.zoom({
-    position: 'topright'
-}).addTo(map);
+L.control.zoom({ position: 'topright' }).addTo(map);
 
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     attribution: '',
@@ -49,16 +96,17 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
     subdomains: 'abcd'
 }).addTo(map);
 
-// Create boundary pane below data layers (zIndex 350 < default overlay 400)
+// Boundary pane below data layers (zIndex 350 < default overlay 400)
 map.createPane('boundaryPane');
 map.getPane('boundaryPane').style.zIndex = 350;
 
 // Global state
-let currentMunicipality = null;
+let currentMunicipality = null;  // ADM3_PCODE
 let currentLayer = 'recintos';
 let currentGeoJsonLayer = null;
 let currentBoundaryLayer = null;
-let boliviaMarkersLayer = null;
+let boliviaLayer = null;         // Overview polygon layer
+let municipalitiesIndex = {};    // { pcode: { name, department, ... } }
 let geoJsonData = {};
 
 // Non-party GeoJSON property fields — used to detect party columns dynamically
@@ -70,13 +118,65 @@ const NON_PARTY_FIELDS = new Set([
     'Province', 'Department', 'ADM0_ES', 'area_ha', 'VotoBlanco', 'VotoNulo'
 ]);
 
-// Return party column names from a GeoJSON feature's properties
 function getPartyKeys(properties) {
     return Object.keys(properties).filter(k =>
         !NON_PARTY_FIELDS.has(k) &&
         !k.startsWith('pct_') &&
         typeof properties[k] === 'number'
     );
+}
+
+// Normalize a display name to a datamun folder slug
+function toFolderName(name) {
+    return name
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '_');
+}
+
+// Build municipality index from geojson features
+function buildMunicipalitiesIndex(features) {
+    const index = {};
+    features.forEach(feature => {
+        const props = feature.properties;
+        const pcode = props.ADM3_PCODE;
+        const override = FOLDER_OVERRIDES[pcode];
+        const deptFolder = override ? override.dept : toFolderName(props.Department);
+        const munFolder = override ? override.mun : toFolderName(props.Municipality);
+        // Search text: municipality + province + department (accent-stripped)
+        const searchText = `${props.Municipality} ${props.Province} ${props.Department}`
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '');
+        index[pcode] = {
+            name: props.Municipality,
+            department: props.Department,
+            province: props.Province,
+            pcode,
+            deptFolder,
+            munFolder,
+            hasDistritos: CAPITAL_PCODES.has(pcode),
+            searchText,
+            feature
+        };
+    });
+    return index;
+}
+
+// Get datamun file paths for a municipality
+function getMunicipalityPaths(pcode) {
+    const cfg = municipalitiesIndex[pcode];
+    if (!cfg) return null;
+    const base = `datamun/${cfg.deptFolder}/${cfg.munFolder}`;
+    const suffix = cfg.munFolder;
+    return {
+        municipio: `${base}/municipio_alcalde_${suffix}.geojson`,
+        recintos: `${base}/recintos_alcalde_${suffix}.geojson`,
+        distritos: `${base}/distritos_alcalde_${suffix}.geojson`,
+    };
 }
 
 // Categorical color by winning party
@@ -192,19 +292,13 @@ function getFeatureStyle(feature) {
     const properties = feature.properties;
 
     if (!properties || !properties.votos_totales) {
-        return {
-            color: CONFIG.neutral,
-            weight: 1,
-            opacity: 0.5,
-            fillOpacity: 0.3
-        };
+        return { color: CONFIG.neutral, weight: 1, opacity: 0.5, fillOpacity: 0.3 };
     }
 
     if (feature.geometry.type === 'Point') {
         const votosTotales = properties.votos_totales || 0;
         const { color: fillColor, fillOpacity } = getColorByWinner(properties);
         let radius;
-
         if (votosTotales <= 2000) radius = 2.5;
         else if (votosTotales <= 3000) radius = 4.0;
         else if (votosTotales <= 4000) radius = 5.5;
@@ -212,24 +306,10 @@ function getFeatureStyle(feature) {
         else if (votosTotales <= 6000) radius = 8.5;
         else if (votosTotales <= 7000) radius = 10.0;
         else radius = 12.0;
-
-        return {
-            radius,
-            fillColor,
-            color: 'transparent',
-            weight: 0,
-            opacity: 0,
-            fillOpacity
-        };
+        return { radius, fillColor, color: 'transparent', weight: 0, opacity: 0, fillOpacity };
     } else {
         const { color, fillOpacity } = getColorByWinner(properties);
-        return {
-            fillColor: color,
-            weight: 1.5,
-            opacity: 0.8,
-            color: 'white',
-            fillOpacity
-        };
+        return { fillColor: color, weight: 1.5, opacity: 0.8, color: 'white', fillOpacity };
     }
 }
 
@@ -243,18 +323,9 @@ function createGeoJsonLayer(data) {
             },
             pointToLayer: (feature, latlng) => {
                 try {
-                    const style = getFeatureStyle(feature);
-                    return L.circleMarker(latlng, style);
+                    return L.circleMarker(latlng, getFeatureStyle(feature));
                 } catch (e) {
-                    console.warn('Error styling point feature:', e);
-                    return L.circleMarker(latlng, {
-                        radius: 5,
-                        fillColor: CONFIG.neutral,
-                        color: '#fff',
-                        weight: 1,
-                        opacity: 0.5,
-                        fillOpacity: 0.3
-                    });
+                    return L.circleMarker(latlng, { radius: 5, fillColor: CONFIG.neutral, color: '#fff', weight: 1, opacity: 0.5, fillOpacity: 0.3 });
                 }
             },
             style: (feature) => {
@@ -263,76 +334,45 @@ function createGeoJsonLayer(data) {
                     const { radius, ...polygonStyle } = style;
                     return polygonStyle;
                 } catch (e) {
-                    console.warn('Error styling polygon feature:', e);
-                    return {
-                        color: CONFIG.neutral,
-                        weight: 1,
-                        opacity: 0.5,
-                        fillOpacity: 0.3
-                    };
+                    return { color: CONFIG.neutral, weight: 1, opacity: 0.5, fillOpacity: 0.3 };
                 }
             },
             onEachFeature: (feature, layer) => {
                 try {
                     const properties = feature.properties;
-
                     if (properties) {
-                        const name = getFeatureName(properties);
-                        layer.bindTooltip(name, {
-                            permanent: false,
-                            direction: 'auto',
-                            className: 'custom-tooltip'
+                        layer.bindTooltip(getFeatureName(properties), {
+                            permanent: false, direction: 'auto', className: 'custom-tooltip'
                         });
                     }
-
                     if (properties && properties.votos_totales) {
                         layer.bindPopup(createPopupContent(properties));
                     }
-
-                    if (layer.setRadius) {
-                        layer._originalRadius = layer.options.radius;
-                    }
+                    if (layer.setRadius) layer._originalRadius = layer.options.radius;
 
                     layer.on('mouseover', function () {
                         if (!this.isPopupOpen()) {
-                            this.setStyle({
-                                weight: 2.5,
-                                opacity: 1,
-                                fillOpacity: 0.9
-                            });
-                            if (this.setRadius && this._originalRadius) {
-                                this.setRadius(this._originalRadius * 1.3);
-                            }
+                            this.setStyle({ weight: 2.5, opacity: 1, fillOpacity: 0.9 });
+                            if (this.setRadius && this._originalRadius) this.setRadius(this._originalRadius * 1.3);
                         }
                     });
-
                     layer.on('mouseout', function () {
                         try {
                             geoJsonLayer.resetStyle(this);
-                            if (this.setRadius && this._originalRadius) {
-                                this.setRadius(this._originalRadius);
-                            }
-                        } catch (e) {
-                            console.warn('Error resetting style:', e);
-                        }
+                            if (this.setRadius && this._originalRadius) this.setRadius(this._originalRadius);
+                        } catch (e) { /* ignore */ }
                     });
-
                     layer.on('popupopen', function () {
                         try {
                             geoJsonLayer.resetStyle(this);
-                            if (this.setRadius && this._originalRadius) {
-                                this.setRadius(this._originalRadius);
-                            }
-                        } catch (e) {
-                            console.warn('Error resetting style on popup open:', e);
-                        }
+                            if (this.setRadius && this._originalRadius) this.setRadius(this._originalRadius);
+                        } catch (e) { /* ignore */ }
                     });
                 } catch (e) {
                     console.warn('Error processing feature:', e);
                 }
             }
         });
-
         return geoJsonLayer;
     } catch (e) {
         console.error('Error creating GeoJSON layer:', e);
@@ -376,13 +416,7 @@ function createPieIcon(properties) {
     }
 
     const svg = `<svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" style="display:block;overflow:visible;">${svgContent}</svg>`;
-    return L.divIcon({
-        html: svg,
-        className: 'pie-chart-marker',
-        iconSize: [size, size],
-        iconAnchor: [r, r],
-        popupAnchor: [0, -r]
-    });
+    return L.divIcon({ html: svg, className: 'pie-chart-marker', iconSize: [size, size], iconAnchor: [r, r], popupAnchor: [0, -r] });
 }
 
 // Create pie chart layer for recintos
@@ -401,17 +435,13 @@ function createRecintosPieLayer(data) {
                     const properties = feature.properties;
                     if (properties) {
                         layer.bindTooltip(getFeatureName(properties), {
-                            permanent: false,
-                            direction: 'auto',
-                            className: 'custom-tooltip'
+                            permanent: false, direction: 'auto', className: 'custom-tooltip'
                         });
                         if (properties.votos_totales) {
                             layer.bindPopup(createPopupContent(properties));
                         }
                     }
-                } catch (e) {
-                    console.warn('Error processing pie feature:', e);
-                }
+                } catch (e) { /* ignore */ }
             }
         });
         return pieLayer;
@@ -448,44 +478,49 @@ function showLoader() {
 
 function hideLoader() {
     const loader = document.getElementById('loader');
-    if (loader) {
-        loader.style.display = 'none';
+    if (loader) loader.style.display = 'none';
+}
+
+// Show a brief toast notification
+function showToast(message) {
+    let toast = document.getElementById('toast');
+    if (!toast) {
+        toast = document.createElement('div');
+        toast.id = 'toast';
+        toast.className = 'toast';
+        document.body.appendChild(toast);
     }
+    toast.textContent = message;
+    toast.classList.add('toast-visible');
+    clearTimeout(toast._hideTimeout);
+    toast._hideTimeout = setTimeout(() => toast.classList.remove('toast-visible'), 2500);
 }
 
 // Load and display a layer
 async function switchLayer(layerKey) {
     try {
         showLoader();
-
         if (currentGeoJsonLayer) {
             map.removeLayer(currentGeoJsonLayer);
         }
-
         if (!geoJsonData[layerKey]) {
             geoJsonData[layerKey] = await loadGeoJsonData(layerKey);
         }
-
         if (!geoJsonData[layerKey]) {
             console.error(`Failed to load layer: ${layerKey}`);
             hideLoader();
             return;
         }
-
         const newLayer = layerKey === 'recintosPie'
             ? createRecintosPieLayer(geoJsonData[layerKey])
             : createGeoJsonLayer(geoJsonData[layerKey]);
-
         if (!newLayer) {
-            console.error(`Failed to create layer: ${layerKey}`);
             hideLoader();
             return;
         }
-
         currentGeoJsonLayer = newLayer.addTo(map);
-        updateLegend(layerKey);
+        updateLegend();
         currentLayer = layerKey;
-
         hideLoader();
     } catch (error) {
         console.error(`Error switching to layer ${layerKey}:`, error);
@@ -494,10 +529,8 @@ async function switchLayer(layerKey) {
 }
 
 // Update legend
-function updateLegend(layerKey) {
+function updateLegend() {
     const legendDiv = document.getElementById('legend');
-
-    // Use only parties present in totals (i.e., active in current municipality)
     const sortedParties = Object.keys(CONFIG.totals)
         .sort((a, b) => ((CONFIG.totals[b] || {}).pct || 0) - ((CONFIG.totals[a] || {}).pct || 0));
     const maxPct = sortedParties.length ? ((CONFIG.totals[sortedParties[0]] || {}).pct || 1) : 1;
@@ -531,13 +564,9 @@ function updateLegend(layerKey) {
 
     const swatchesHTML = sortedParties.map(p => partyBarHTML(p, 26)).join('');
 
-    const legendTitle = layerKey === 'recintosPie'
-        ? 'Partidos (%)'
-        : 'Partidos (%)';
-
     legendDiv.innerHTML = `
         <div class="legend-header">
-            <div class="legend-title">${legendTitle}</div>
+            <div class="legend-title">Partidos (%)</div>
             <button class="legend-toggle" aria-label="Colapsar leyenda">${legendCollapsed ? '▲' : '▼'}</button>
         </div>
         <div class="legend-body">
@@ -549,25 +578,27 @@ function updateLegend(layerKey) {
 }
 
 // Load party/candidate data from CSV; auto-generate colors for parties not in CSV
-async function loadPartiesData(municipalityKey, detectedPartyKeys) {
-    const municipioName = MUNICIPALITIES_CONFIG[municipalityKey].name;
-    try {
-        const response = await fetch('data/data-partidos.csv');
-        const text = await response.text();
-        const lines = text.trim().split('\n');
-        for (let i = 1; i < lines.length; i++) {
-            const parts = lines[i].split(',');
-            const municipio = parts[0];
-            const partido = parts[1];
-            const candidato = parts[2];
-            const color = parts[3];
-            const img = (parts[4] || '').trim();
-            if (!partido || municipio !== municipioName) continue;
-            CONFIG.partiesData[partido] = { candidato, color, img: img ? `fotos-candidatos/${img}` : '' };
-            CONFIG.partyColors[partido] = color;
+async function loadPartiesData(pcode, detectedPartyKeys) {
+    const csvName = CAPITAL_CSV_NAMES[pcode] || null;
+    if (csvName) {
+        try {
+            const response = await fetch('datamun/data-partidos.csv');
+            const text = await response.text();
+            const lines = text.trim().split('\n');
+            for (let i = 1; i < lines.length; i++) {
+                const parts = lines[i].split(',');
+                const municipio = parts[0];
+                const partido = parts[1];
+                const candidato = parts[2];
+                const color = parts[3];
+                const img = (parts[4] || '').trim();
+                if (!partido || municipio !== csvName) continue;
+                CONFIG.partiesData[partido] = { candidato, color, img: img ? `fotos-candidatos/${img}` : '' };
+                CONFIG.partyColors[partido] = color;
+            }
+        } catch (e) {
+            console.error('Error loading parties data:', e);
         }
-    } catch (e) {
-        console.error('Error loading parties data:', e);
     }
 
     // Auto-generate colors for any party not covered by the CSV
@@ -586,11 +617,11 @@ async function loadPartiesData(municipalityKey, detectedPartyKeys) {
 }
 
 // Load municipal vote totals from the municipio GeoJSON; returns detected party keys
-async function loadTotals(municipalityKey) {
-    const cfg = MUNICIPALITIES_CONFIG[municipalityKey];
-    const url = `data/${cfg.folder}/municipio_alcalde_${cfg.fileSuffix}.geojson`;
+async function loadTotals(pcode) {
+    const paths = getMunicipalityPaths(pcode);
+    if (!paths) return [];
     try {
-        const data = await fetch(url).then(r => r.json());
+        const data = await fetch(paths.municipio).then(r => r.json());
         const props = data.features[0].properties;
         const parties = getPartyKeys(props);
         const grandTotal = props.votos_totales || 1;
@@ -606,25 +637,24 @@ async function loadTotals(municipalityKey) {
 }
 
 // Update layer file paths for the selected municipality
-function updateLayerPaths(municipalityKey) {
-    const cfg = MUNICIPALITIES_CONFIG[municipalityKey];
-    const base = `data/${cfg.folder}`;
-    const suffix = cfg.fileSuffix;
-    CONFIG.layers.recintos = `${base}/recintos_alcalde_${suffix}.geojson`;
-    CONFIG.layers.recintosPie = `${base}/recintos_alcalde_${suffix}.geojson`;
-    CONFIG.layers.distritos = `${base}/distritos_alcalde_${suffix}.geojson`;
+function updateLayerPaths(pcode) {
+    const paths = getMunicipalityPaths(pcode);
+    if (!paths) return;
+    CONFIG.layers.recintos = paths.recintos;
+    CONFIG.layers.recintosPie = paths.recintos;  // same file, different rendering
+    CONFIG.layers.distritos = paths.distritos;
 }
 
 // Load municipality boundary polygon
-async function loadBoundary(municipalityKey) {
+async function loadBoundary(pcode) {
     if (currentBoundaryLayer) {
         map.removeLayer(currentBoundaryLayer);
         currentBoundaryLayer = null;
     }
-    const cfg = MUNICIPALITIES_CONFIG[municipalityKey];
-    const url = `data/${cfg.folder}/municipio_alcalde_${cfg.fileSuffix}.geojson`;
+    const paths = getMunicipalityPaths(pcode);
+    if (!paths) return;
     try {
-        const data = await fetch(url).then(r => r.json());
+        const data = await fetch(paths.municipio).then(r => r.json());
         currentBoundaryLayer = L.geoJSON(data, {
             pane: 'boundaryPane',
             interactive: false,
@@ -641,29 +671,91 @@ async function loadBoundary(municipalityKey) {
     }
 }
 
-// Add clickable markers for Bolivia overview
-function addBoliviaMarkers() {
-    boliviaMarkersLayer = L.layerGroup();
-    Object.entries(MUNICIPALITIES_CONFIG).forEach(([key, cfg]) => {
-        L.circleMarker(cfg.coords, {
-            radius: 9,
-            fillColor: '#0288d1',
-            color: '#fff',
-            weight: 2,
-            fillOpacity: 0.85
-        })
-            .bindTooltip(cfg.name, {
+// Add Bolivia overview polygon layer
+function addBoliviaLayer(geojsonData) {
+    boliviaLayer = L.geoJSON(geojsonData, {
+        style: {
+            fillColor: '#2196F3',
+            fillOpacity: 0.06,
+            color: '#90CAF9',
+            weight: 0.8,
+            opacity: 0.8
+        },
+        onEachFeature: (feature, layer) => {
+            const props = feature.properties;
+            const pcode = props.ADM3_PCODE;
+            layer.bindTooltip(props.Municipality, {
                 permanent: false,
                 direction: 'auto',
                 className: 'custom-tooltip'
-            })
-            .on('click', () => {
-                document.getElementById('municipality-select').value = key;
-                switchMunicipality(key);
-            })
-            .addTo(boliviaMarkersLayer);
+            });
+            layer.on('mouseover', function () {
+                this.setStyle({ fillOpacity: 0.22, color: '#1565C0', weight: 1.5 });
+            });
+            layer.on('mouseout', function () {
+                if (boliviaLayer) boliviaLayer.resetStyle(this);
+            });
+            layer.on('click', () => {
+                selectMunicipality(pcode);
+            });
+        }
+    }).addTo(map);
+}
+
+// ---- Search UI ----
+
+function openSearchDropdown() {
+    document.getElementById('search-results').style.display = 'block';
+}
+
+function closeSearchDropdown() {
+    document.getElementById('search-results').style.display = 'none';
+}
+
+function renderSearchResults(query) {
+    const resultsDiv = document.getElementById('search-results');
+    if (!query || query.length < 2) {
+        resultsDiv.innerHTML = '';
+        closeSearchDropdown();
+        return;
+    }
+    const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    const entries = Object.values(municipalitiesIndex);
+    const startsWith = entries.filter(e => e.searchText.startsWith(q));
+    const contains = entries.filter(e => !e.searchText.startsWith(q) && e.searchText.includes(q));
+    const results = [...startsWith, ...contains].slice(0, 10);
+
+    if (results.length === 0) {
+        resultsDiv.innerHTML = '<div class="search-no-results">Sin resultados</div>';
+        openSearchDropdown();
+        return;
+    }
+
+    resultsDiv.innerHTML = results.map(r => `
+        <div class="search-result-item" data-pcode="${r.pcode}">
+            <span class="search-result-name">${r.name}</span>
+            <span class="search-result-dept">${r.department}</span>
+        </div>
+    `).join('');
+    openSearchDropdown();
+
+    resultsDiv.querySelectorAll('.search-result-item').forEach(el => {
+        el.addEventListener('click', () => {
+            const pcode = el.dataset.pcode;
+            document.getElementById('municipality-search').value = municipalitiesIndex[pcode]?.name || '';
+            closeSearchDropdown();
+            selectMunicipality(pcode);
+        });
     });
-    boliviaMarkersLayer.addTo(map);
+}
+
+// Handle municipality selection from search or map click
+function selectMunicipality(pcode) {
+    const cfg = municipalitiesIndex[pcode];
+    if (!cfg) return;
+    document.getElementById('municipality-search').value = cfg.name;
+    closeSearchDropdown();
+    switchMunicipality(pcode);
 }
 
 // Reset to Bolivia overview
@@ -673,7 +765,7 @@ function resetToBolivia() {
     geoJsonData = {};
     CONFIG.partyColors = {}; CONFIG.partiesData = {}; CONFIG.totals = {};
     currentMunicipality = null;
-    if (boliviaMarkersLayer) boliviaMarkersLayer.addTo(map);
+    if (boliviaLayer) boliviaLayer.addTo(map);
     document.getElementById('layer-select-wrapper').style.display = 'none';
     document.getElementById('legend').style.display = 'none';
     document.getElementById('layer-select').value = 'recintos';
@@ -682,57 +774,81 @@ function resetToBolivia() {
 }
 
 // Switch to a new municipality — orchestrates all data loading
-async function switchMunicipality(key) {
+async function switchMunicipality(pcode) {
+    const cfg = municipalitiesIndex[pcode];
+    if (!cfg) return;
+
     // Clear current layers
     if (currentGeoJsonLayer) { map.removeLayer(currentGeoJsonLayer); currentGeoJsonLayer = null; }
     if (currentBoundaryLayer) { map.removeLayer(currentBoundaryLayer); currentBoundaryLayer = null; }
 
-    // Hide Bolivia overview markers
-    if (boliviaMarkersLayer) map.removeLayer(boliviaMarkersLayer);
+    // Hide Bolivia overview layer while viewing municipality
+    if (boliviaLayer) map.removeLayer(boliviaLayer);
 
-    // Clear GeoJSON cache (paths change per municipality)
+    // Clear cache
     geoJsonData = {};
-
-    // Reset party/config state
     CONFIG.partyColors = {}; CONFIG.partiesData = {}; CONFIG.totals = {};
 
-    // Load totals from municipio GeoJSON (also detects party keys)
-    const detectedParties = await loadTotals(key);
+    // Load totals (also detects party keys)
+    const detectedParties = await loadTotals(pcode);
 
-    // Load party colors/data (CSV filtered by municipality, auto-generate for others)
-    await loadPartiesData(key, detectedParties);
+    // No data available — notify user and return to Bolivia overview
+    if (detectedParties.length === 0) {
+        if (boliviaLayer) boliviaLayer.addTo(map);
+        showToast(`Sin datos para ${cfg.name}`);
+        document.getElementById('municipality-search').value = '';
+        return;
+    }
+
+    // Load party colors/data
+    await loadPartiesData(pcode, detectedParties);
 
     // Update layer file paths
-    updateLayerPaths(key);
+    updateLayerPaths(pcode);
 
     // Load boundary
-    await loadBoundary(key);
+    await loadBoundary(pcode);
+
+    // Show/hide distritos option based on whether this municipality has distritos
+    const distritosOption = document.querySelector('#layer-select option[value="distritos"]');
+    if (distritosOption) {
+        distritosOption.style.display = cfg.hasDistritos ? '' : 'none';
+    }
 
     // Fly to municipality
-    const cfg = MUNICIPALITIES_CONFIG[key];
-    const zoom = window.innerWidth <= 768 ? cfg.zoom.m : cfg.zoom.d;
-    map.flyTo(cfg.coords, zoom, { duration: 1.2 });
+    let flyDone;
+    if (CAPITAL_COORDS[pcode]) {
+        const zoom = window.innerWidth <= 768 ? CAPITAL_ZOOM[pcode].m : CAPITAL_ZOOM[pcode].d;
+        map.flyTo(CAPITAL_COORDS[pcode], zoom, { duration: 1.2 });
+        flyDone = new Promise(resolve => map.once('moveend', resolve));
+    } else {
+        // Fit to the municipality polygon bounds
+        try {
+            const bounds = L.geoJSON(cfg.feature).getBounds();
+            map.flyToBounds(bounds, { padding: [30, 30], duration: 1.2 });
+            flyDone = new Promise(resolve => map.once('moveend', resolve));
+        } catch (e) {
+            flyDone = Promise.resolve();
+        }
+    }
 
     // Show controls and update subtitle
     document.getElementById('layer-select-wrapper').style.display = '';
     document.getElementById('legend').style.display = '';
     document.getElementById('controls-subtitle').textContent = `Alcaldía de ${cfg.name} 2026`;
-    document.getElementById('layer-select').value = 'recintos';
-    currentMunicipality = key;
 
-    // Wait for fly animation to finish before showing data
-    await new Promise(resolve => map.once('moveend', resolve));
-    await switchLayer('recintos');
-}
-
-// Event listener for municipality selection
-document.getElementById('municipality-select').addEventListener('change', (e) => {
-    if (e.target.value) {
-        switchMunicipality(e.target.value);
-    } else {
-        resetToBolivia();
+    // Reset layer select (to recintos, or keep current if valid for this municipality)
+    const layerSelect = document.getElementById('layer-select');
+    if (layerSelect.value === 'distritos' && !cfg.hasDistritos) {
+        layerSelect.value = 'recintos';
     }
-});
+
+    currentMunicipality = pcode;
+
+    // Wait for fly animation before loading data layer
+    await flyDone;
+    await switchLayer(layerSelect.value || 'recintos');
+}
 
 // Event listener for layer selection
 document.getElementById('layer-select').addEventListener('change', (e) => {
@@ -765,10 +881,54 @@ legendDiv.addEventListener('touchend', (e) => {
     }
 }, { passive: true });
 
-// Initialize — Bolivia overview, controls hidden until municipality selected
-function init() {
-    addBoliviaMarkers();
+// Close search dropdown when clicking outside
+document.addEventListener('click', (e) => {
+    if (!e.target.closest('.search-wrapper')) {
+        closeSearchDropdown();
+    }
+});
+
+// Initialize — load municipios.geojson, show Bolivia overview
+async function init() {
     document.getElementById('layer-select-wrapper').style.display = 'none';
     document.getElementById('legend').style.display = 'none';
+
+    try {
+        const response = await fetch('datamun/municipios.geojson');
+        if (!response.ok) throw new Error('Failed to load municipios.geojson');
+        const geojsonData = await response.json();
+        municipalitiesIndex = buildMunicipalitiesIndex(geojsonData.features);
+        addBoliviaLayer(geojsonData);
+    } catch (e) {
+        console.error('Error loading municipios.geojson:', e);
+    }
 }
+
+// Search input wiring (script is at bottom of body, DOM is already ready)
+const searchInput = document.getElementById('municipality-search');
+if (searchInput) {
+    searchInput.addEventListener('input', (e) => {
+        const val = e.target.value.trim();
+        if (!val) {
+            closeSearchDropdown();
+            if (currentMunicipality) resetToBolivia();
+        } else {
+            renderSearchResults(val);
+        }
+    });
+    searchInput.addEventListener('focus', (e) => {
+        if (e.target.value.trim().length >= 2) renderSearchResults(e.target.value.trim());
+    });
+    searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            const first = document.querySelector('.search-result-item');
+            if (first) first.click();
+        }
+        if (e.key === 'Escape') {
+            closeSearchDropdown();
+            searchInput.blur();
+        }
+    });
+}
+
 init();

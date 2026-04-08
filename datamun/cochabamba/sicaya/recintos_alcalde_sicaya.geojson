@@ -1,0 +1,9 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_sicaya",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 921.0, "recinto": 7014.0, "NombreRecinto": "Nucleo Humanistico Sicaya", "LIBRE": 678.0, "PATRIA-UNIDOS": 251.0, "votos_totales": 929.0, "VotoBlanco": 36.0, "VotoNulo": 94.0, "InscritosHabilitados": 1204.0, "participacion": 77.2, "pct_LIBRE": 73.0, "pct_PATRIA-UNIDOS": 27.0, "ganador": "LIBRE", "votos_ganador": 678.0, "pct_ganador": 73.0, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 251.0, "pct_2do": 27.0, "margen_victoria": 46.0 }, "geometry": { "type": "Point", "coordinates": [ -66.3328, -17.8005 ] } },
+{ "type": "Feature", "properties": { "asiento": 922.0, "recinto": 25931.0, "NombreRecinto": "U. E. Orcoma", "LIBRE": 441.0, "PATRIA-UNIDOS": 85.0, "votos_totales": 526.0, "VotoBlanco": 19.0, "VotoNulo": 75.0, "InscritosHabilitados": 692.0, "participacion": 76.0, "pct_LIBRE": 83.8, "pct_PATRIA-UNIDOS": 16.2, "ganador": "LIBRE", "votos_ganador": 441.0, "pct_ganador": 83.8, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 85.0, "pct_2do": 16.2, "margen_victoria": 67.6 }, "geometry": { "type": "Point", "coordinates": [ -66.355109, -17.749111 ] } }
+]
+}

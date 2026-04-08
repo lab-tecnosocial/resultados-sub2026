@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_urmiri",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 1501.0, "recinto": 56.0, "NombreRecinto": "Esc. Puituco", "PATRIA-UNIDOS": 75.0, "votos_totales": 75.0, "VotoBlanco": 14.0, "VotoNulo": 10.0, "InscritosHabilitados": 106.0, "participacion": 70.8, "pct_PATRIA-UNIDOS": 100.0, "ganador": "PATRIA-UNIDOS", "votos_ganador": 75.0, "pct_ganador": 100.0, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 75.0, "pct_2do": 100.0, "margen_victoria": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -66.091876, -19.314953 ] } },
+{ "type": "Feature", "properties": { "asiento": 1512.0, "recinto": 69.0, "NombreRecinto": "Esc. Juan Jose Perez", "PATRIA-UNIDOS": 153.0, "votos_totales": 153.0, "VotoBlanco": 37.0, "VotoNulo": 41.0, "InscritosHabilitados": 270.0, "participacion": 56.7, "pct_PATRIA-UNIDOS": 100.0, "ganador": "PATRIA-UNIDOS", "votos_ganador": 153.0, "pct_ganador": 100.0, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 153.0, "pct_2do": 100.0, "margen_victoria": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -66.06463, -19.385705 ] } },
+{ "type": "Feature", "properties": { "asiento": 1516.0, "recinto": 73.0, "NombreRecinto": "U. E. Cahuayo", "PATRIA-UNIDOS": 106.0, "votos_totales": 106.0, "VotoBlanco": 16.0, "VotoNulo": 0.0, "InscritosHabilitados": 136.0, "participacion": 77.9, "pct_PATRIA-UNIDOS": 100.0, "ganador": "PATRIA-UNIDOS", "votos_ganador": 106.0, "pct_ganador": 100.0, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 106.0, "pct_2do": 100.0, "margen_victoria": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -66.190798, -19.276965 ] } },
+{ "type": "Feature", "properties": { "asiento": 2818.0, "recinto": 467.0, "NombreRecinto": "Esc. Secc. Vacuyo", "PATRIA-UNIDOS": 113.0, "votos_totales": 113.0, "VotoBlanco": 28.0, "VotoNulo": 14.0, "InscritosHabilitados": 171.0, "participacion": 66.1, "pct_PATRIA-UNIDOS": 100.0, "ganador": "PATRIA-UNIDOS", "votos_ganador": 113.0, "pct_ganador": 100.0, "partido_2do": "PATRIA-UNIDOS", "votos_2do": 113.0, "pct_2do": 100.0, "margen_victoria": 0.0 }, "geometry": { "type": "Point", "coordinates": [ -66.112273, -19.45475 ] } }
+]
+}

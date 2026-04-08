@@ -3,7 +3,8 @@
     "allow": [
       "Bash(file:*)",
       "Bash(python3:*)",
-      "Bash(cat /Users/alexojeda/dev/resultados-sub2026/data/cochabamba/*.json)"
+      "Bash(cat /Users/alexojeda/dev/resultados-sub2026/data/cochabamba/*.json)",
+      "Bash(node:*)"
     ]
   }
 }

@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_san_pedro",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 1140.0, "recinto": 34.0, "NombreRecinto": "U.E.  12 de Abril", "FSUTCP": 0.0, "MTS": 11.0, "MDA": 50.0, "LIBRE-PANDO": 228.0, "UPP": 12.0, "votos_totales": 301.0, "VotoBlanco": 6.0, "VotoNulo": 15.0, "InscritosHabilitados": 398.0, "participacion": 75.6, "pct_FSUTCP": 0.0, "pct_MTS": 3.7, "pct_MDA": 16.6, "pct_LIBRE-PANDO": 75.7, "pct_UPP": 4.0, "ganador": "LIBRE-PANDO", "votos_ganador": 228.0, "pct_ganador": 75.7, "partido_2do": "MDA", "votos_2do": 50.0, "pct_2do": 16.6, "margen_victoria": 59.1 }, "geometry": { "type": "Point", "coordinates": [ -66.18632, -10.82638 ] } },
+{ "type": "Feature", "properties": { "asiento": 3401.0, "recinto": 1.0, "NombreRecinto": "U.E.  Jorge Haensel", "FSUTCP": 0.0, "MTS": 3.0, "MDA": 90.0, "LIBRE-PANDO": 216.0, "UPP": 6.0, "votos_totales": 315.0, "VotoBlanco": 4.0, "VotoNulo": 5.0, "InscritosHabilitados": 389.0, "participacion": 81.0, "pct_FSUTCP": 0.0, "pct_MTS": 1.0, "pct_MDA": 28.6, "pct_LIBRE-PANDO": 68.6, "pct_UPP": 1.9, "ganador": "LIBRE-PANDO", "votos_ganador": 216.0, "pct_ganador": 68.6, "partido_2do": "MDA", "votos_2do": 90.0, "pct_2do": 28.6, "margen_victoria": 40.0 }, "geometry": { "type": "Point", "coordinates": [ -66.438856, -10.953682 ] } },
+{ "type": "Feature", "properties": { "asiento": 3879.0, "recinto": 1.0, "NombreRecinto": "U.E. Fortaleza", "FSUTCP": 0.0, "MTS": 7.0, "MDA": 116.0, "LIBRE-PANDO": 32.0, "UPP": 14.0, "votos_totales": 169.0, "VotoBlanco": 4.0, "VotoNulo": 5.0, "InscritosHabilitados": 225.0, "participacion": 75.1, "pct_FSUTCP": 0.0, "pct_MTS": 4.1, "pct_MDA": 68.6, "pct_LIBRE-PANDO": 18.9, "pct_UPP": 8.3, "ganador": "MDA", "votos_ganador": 116.0, "pct_ganador": 68.6, "partido_2do": "LIBRE-PANDO", "votos_2do": 32.0, "pct_2do": 18.9, "margen_victoria": 49.7 }, "geometry": { "type": "Point", "coordinates": [ -66.32966, -10.84701 ] } }
+]
+}

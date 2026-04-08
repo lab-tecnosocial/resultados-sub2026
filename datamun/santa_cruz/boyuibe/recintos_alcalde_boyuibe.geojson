@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_boyuibe",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2398.0, "recinto": 4015.0, "NombreRecinto": "Esc. Central Rafael Pabon", "FE": 52.0, "PATRIA-UNIDOS": 37.0, "UNIDOS": 406.0, "LIBRE": 803.0, "SOL": 0.0, "SPT": 455.0, "votos_totales": 1753.0, "VotoBlanco": 47.0, "VotoNulo": 156.0, "InscritosHabilitados": 2690.0, "participacion": 65.2, "pct_FE": 3.0, "pct_PATRIA-UNIDOS": 2.1, "pct_UNIDOS": 23.2, "pct_LIBRE": 45.8, "pct_SOL": 0.0, "pct_SPT": 26.0, "ganador": "LIBRE", "votos_ganador": 803.0, "pct_ganador": 45.8, "partido_2do": "SPT", "votos_2do": 455.0, "pct_2do": 26.0, "margen_victoria": 19.8 }, "geometry": { "type": "Point", "coordinates": [ -63.28176, -20.43133 ] } },
+{ "type": "Feature", "properties": { "asiento": 2399.0, "recinto": 4052.0, "NombreRecinto": "U.E. Juan Carlos Sanchez", "FE": 0.0, "PATRIA-UNIDOS": 0.0, "UNIDOS": 1.0, "LIBRE": 15.0, "SOL": 0.0, "SPT": 5.0, "votos_totales": 21.0, "VotoBlanco": 1.0, "VotoNulo": 1.0, "InscritosHabilitados": 31.0, "participacion": 67.7, "pct_FE": 0.0, "pct_PATRIA-UNIDOS": 0.0, "pct_UNIDOS": 4.8, "pct_LIBRE": 71.4, "pct_SOL": 0.0, "pct_SPT": 23.8, "ganador": "LIBRE", "votos_ganador": 15.0, "pct_ganador": 71.4, "partido_2do": "SPT", "votos_2do": 5.0, "pct_2do": 23.8, "margen_victoria": 47.6 }, "geometry": { "type": "Point", "coordinates": [ -62.831223, -20.443993 ] } },
+{ "type": "Feature", "properties": { "asiento": 3577.0, "recinto": 1.0, "NombreRecinto": "U.E. Paulino Moreno", "FE": 0.0, "PATRIA-UNIDOS": 1.0, "UNIDOS": 88.0, "LIBRE": 34.0, "SOL": 0.0, "SPT": 19.0, "votos_totales": 142.0, "VotoBlanco": 4.0, "VotoNulo": 8.0, "InscritosHabilitados": 197.0, "participacion": 72.1, "pct_FE": 0.0, "pct_PATRIA-UNIDOS": 0.7, "pct_UNIDOS": 62.0, "pct_LIBRE": 23.9, "pct_SOL": 0.0, "pct_SPT": 13.4, "ganador": "UNIDOS", "votos_ganador": 88.0, "pct_ganador": 62.0, "partido_2do": "LIBRE", "votos_2do": 34.0, "pct_2do": 23.9, "margen_victoria": 38.1 }, "geometry": { "type": "Point", "coordinates": [ -63.262088, -20.287397 ] } }
+]
+}

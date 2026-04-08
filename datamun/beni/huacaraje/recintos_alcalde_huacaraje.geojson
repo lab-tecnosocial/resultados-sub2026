@@ -1,0 +1,10 @@
+{
+"type": "FeatureCollection",
+"name": "recintos_alcalde_huacaraje",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "asiento": 2657.0, "recinto": 1.0, "NombreRecinto": "U.E. Juan Alberto Orellana", "PATRIA-UNIDOS": 699.0, "DESPIERTA": 509.0, "votos_totales": 1208.0, "VotoBlanco": 5.0, "VotoNulo": 10.0, "InscritosHabilitados": 1414.0, "participacion": 85.4, "pct_PATRIA-UNIDOS": 57.9, "pct_DESPIERTA": 42.1, "ganador": "PATRIA-UNIDOS", "votos_ganador": 699.0, "pct_ganador": 57.9, "partido_2do": "DESPIERTA", "votos_2do": 509.0, "pct_2do": 42.1, "margen_victoria": 15.8 }, "geometry": { "type": "Point", "coordinates": [ -63.87964, -13.59328 ] } },
+{ "type": "Feature", "properties": { "asiento": 2658.0, "recinto": 1.0, "NombreRecinto": "Esc. El Carmen", "PATRIA-UNIDOS": 325.0, "DESPIERTA": 207.0, "votos_totales": 532.0, "VotoBlanco": 5.0, "VotoNulo": 12.0, "InscritosHabilitados": 665.0, "participacion": 80.0, "pct_PATRIA-UNIDOS": 61.1, "pct_DESPIERTA": 38.9, "ganador": "PATRIA-UNIDOS", "votos_ganador": 325.0, "pct_ganador": 61.1, "partido_2do": "DESPIERTA", "votos_2do": 207.0, "pct_2do": 38.9, "margen_victoria": 22.2 }, "geometry": { "type": "Point", "coordinates": [ -63.80146, -14.23021 ] } },
+{ "type": "Feature", "properties": { "asiento": 3130.0, "recinto": 1.0, "NombreRecinto": "U.E. Juan Antonio Velarde Guerra", "PATRIA-UNIDOS": 41.0, "DESPIERTA": 28.0, "votos_totales": 69.0, "VotoBlanco": 0.0, "VotoNulo": 1.0, "InscritosHabilitados": 74.0, "participacion": 93.2, "pct_PATRIA-UNIDOS": 59.4, "pct_DESPIERTA": 40.6, "ganador": "PATRIA-UNIDOS", "votos_ganador": 41.0, "pct_ganador": 59.4, "partido_2do": "DESPIERTA", "votos_2do": 28.0, "pct_2do": 40.6, "margen_victoria": 18.8 }, "geometry": { "type": "Point", "coordinates": [ -63.82495, -13.6832 ] } }
+]
+}
