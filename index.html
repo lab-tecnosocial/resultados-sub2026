@@ -30,7 +30,7 @@
     <meta property="twitter:image" content="https://lab-tecnosocial.github.io/resultados-sub2026/preview2.jpg">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-    <link rel="stylesheet" href="style.css?v=1775667750532">
+    <link rel="stylesheet" href="style.css?v=1775857087923">
 </head>
 
 <body>
@@ -39,7 +39,7 @@
     <div class="controls-container">
         <h2 class="controls-title">Mapa de resultados electorales</h2>
         <p id="controls-subtitle" class="controls-subtitle">Bolivia - Alcaldias 2026</p>
-        <p class="controls-info">Busca un municipio o haz click en la región</p>
+        <p class="controls-info">Busca un municipio o partido</p>
         <div class="selector-wrapper search-wrapper">
             <label for="municipality-search">Municipio</label>
             <div class="search-input-container">
@@ -47,6 +47,12 @@
                     spellcheck="false">
                 <div id="search-results" class="search-results" style="display:none;"></div>
             </div>
+        </div>
+        <div id="party-search-wrapper" class="selector-wrapper">
+            <label for="party-select">Partido</label>
+            <select id="party-select">
+                <option value="">Todos los partidos</option>
+            </select>
         </div>
         <div id="layer-select-wrapper" class="selector-wrapper">
             <label for="layer-select">Seleccionar capa</label>
@@ -68,7 +74,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/2.4.2/chroma.min.js"></script>
-    <script src="app.js?v=1775667750532"></script>
+    <script src="app.js?v=1775857087923"></script>
 </body>
 
 </html>

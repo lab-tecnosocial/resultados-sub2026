@@ -109,6 +109,17 @@ let boliviaLayer = null;         // Overview polygon layer
 let municipalitiesIndex = {};    // { pcode: { name, department, ... } }
 let geoJsonData = {};
 
+// Party mode state
+let currentParty = null;
+let partyMunicipalitiesMap = {};  // { partido: [pcode, ...] }
+let partyGlobalColors = {};        // { partido: color } first occurrence from CSV
+
+// Manual match overrides for partidos_ganadores.json names not in geojson
+const PARTY_MUN_OVERRIDES = {
+    'san_pedro_de_curahuara|la_paz': 'BO021801',
+    'curahuara_de_carangas|oruro': 'BO040401',
+};
+
 // Non-party GeoJSON property fields — used to detect party columns dynamically
 const NON_PARTY_FIELDS = new Set([
     'asiento', 'recinto', 'NombreRecinto', 'votos_totales', 'InscritosHabilitados',
@@ -690,12 +701,28 @@ function addBoliviaLayer(geojsonData) {
                 className: 'custom-tooltip'
             });
             layer.on('mouseover', function () {
-                this.setStyle({ fillOpacity: 0.22, color: '#1565C0', weight: 1.5 });
+                if (currentParty) {
+                    const partyPcodes = new Set(partyMunicipalitiesMap[currentParty] || []);
+                    if (!partyPcodes.has(pcode)) return;
+                    this.setStyle({ fillOpacity: 0.9, weight: 2, color: 'white' });
+                } else {
+                    this.setStyle({ fillOpacity: 0.22, color: '#1565C0', weight: 1.5 });
+                }
             });
             layer.on('mouseout', function () {
-                if (boliviaLayer) boliviaLayer.resetStyle(this);
+                if (currentParty) {
+                    const partyPcodes = new Set(partyMunicipalitiesMap[currentParty] || []);
+                    if (!partyPcodes.has(pcode)) return;
+                    updateBoliviaLayerStyle();
+                } else if (boliviaLayer) {
+                    boliviaLayer.resetStyle(this);
+                }
             });
             layer.on('click', () => {
+                if (currentParty) {
+                    const partyPcodes = new Set(partyMunicipalitiesMap[currentParty] || []);
+                    if (!partyPcodes.has(pcode)) return;
+                }
                 selectMunicipality(pcode);
             });
         }
@@ -720,7 +747,11 @@ function renderSearchResults(query) {
         return;
     }
     const q = query.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-    const entries = Object.values(municipalitiesIndex);
+    let entries = Object.values(municipalitiesIndex);
+    if (currentParty && partyMunicipalitiesMap[currentParty]) {
+        const partySet = new Set(partyMunicipalitiesMap[currentParty]);
+        entries = entries.filter(e => partySet.has(e.pcode));
+    }
     const startsWith = entries.filter(e => e.searchText.startsWith(q));
     const contains = entries.filter(e => !e.searchText.startsWith(q) && e.searchText.includes(q));
     const results = [...startsWith, ...contains].slice(0, 10);
@@ -755,10 +786,11 @@ function selectMunicipality(pcode) {
     if (!cfg) return;
     document.getElementById('municipality-search').value = cfg.name;
     closeSearchDropdown();
+    document.getElementById('party-search-wrapper').style.display = 'none';
     switchMunicipality(pcode);
 }
 
-// Reset to Bolivia overview
+// Reset to Bolivia overview (or party view if a party is still selected)
 function resetToBolivia() {
     if (currentGeoJsonLayer) { map.removeLayer(currentGeoJsonLayer); currentGeoJsonLayer = null; }
     if (currentBoundaryLayer) { map.removeLayer(currentBoundaryLayer); currentBoundaryLayer = null; }
@@ -767,9 +799,18 @@ function resetToBolivia() {
     currentMunicipality = null;
     if (boliviaLayer) boliviaLayer.addTo(map);
     document.getElementById('layer-select-wrapper').style.display = 'none';
-    document.getElementById('legend').style.display = 'none';
     document.getElementById('layer-select').value = 'recintos';
     document.getElementById('controls-subtitle').textContent = 'Bolivia - Subnacionales 2026';
+    document.getElementById('party-search-wrapper').style.display = '';
+
+    if (currentParty) {
+        updateBoliviaLayerStyle();
+        showPartyLegend();
+        document.getElementById('legend').style.display = '';
+    } else {
+        updateBoliviaLayerStyle();
+        document.getElementById('legend').style.display = 'none';
+    }
     map.flyTo([-16.5, -65.0], 6, { duration: 1.2 });
 }
 
@@ -888,6 +929,183 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// ── PARTY MODE FUNCTIONS ─────────────────────────────────────────────
+
+function hexToRgba(hex, alpha) {
+    const h = hex.replace('#', '');
+    const full = h.length === 3 ? h.split('').map(c => c + c).join('') : h;
+    const r = parseInt(full.slice(0, 2), 16);
+    const g = parseInt(full.slice(2, 4), 16);
+    const b = parseInt(full.slice(4, 6), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+}
+
+function buildPartyGlobalColors(csvText) {
+    const colors = {};
+    const lines = csvText.trim().split('\n');
+    for (let i = 1; i < lines.length; i++) {
+        const parts = lines[i].split(',');
+        const partido = parts[1]?.trim();
+        const color = parts[3]?.trim();
+        if (partido && color && !colors[partido]) colors[partido] = color;
+    }
+    return colors;
+}
+
+function normMunDept(s) {
+    return s.toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .trim()
+        .replace(/\s+/g, '_');
+}
+
+function matchPartiesToPcodes(rawData) {
+    const lookup = {};
+    for (const pcode in municipalitiesIndex) {
+        const cfg = municipalitiesIndex[pcode];
+        lookup[normMunDept(cfg.name) + '|' + normMunDept(cfg.department)] = pcode;
+    }
+    const result = {};
+    for (const entry of rawData) {
+        const key = normMunDept(entry.municipio) + '|' + normMunDept(entry.departamento);
+        const pcode = lookup[key] || PARTY_MUN_OVERRIDES[key];
+        if (!pcode) continue;
+        if (!result[entry.partido]) result[entry.partido] = [];
+        result[entry.partido].push(pcode);
+    }
+    return result;
+}
+
+function getPartyGlobalColor(party) {
+    if (partyGlobalColors[party]) return partyGlobalColors[party];
+    let hash = 0;
+    for (let i = 0; i < party.length; i++) hash = party.charCodeAt(i) + ((hash << 5) - hash);
+    const hue = ((hash % 360) + 360) % 360;
+    return `hsl(${hue}, 55%, 45%)`;
+}
+
+function populatePartySelect(partyMap) {
+    const select = document.getElementById('party-select');
+    if (!select) return;
+    const parties = Object.keys(partyMap)
+        .sort((a, b) => partyMap[b].length - partyMap[a].length);
+    parties.forEach(p => {
+        const opt = document.createElement('option');
+        opt.value = p;
+        opt.textContent = p;
+        select.appendChild(opt);
+    });
+}
+
+function updateBoliviaLayerStyle() {
+    if (!boliviaLayer) return;
+    const partyPcodes = currentParty
+        ? new Set(partyMunicipalitiesMap[currentParty] || [])
+        : null;
+    boliviaLayer.eachLayer(layer => {
+        if (!partyPcodes) {
+            layer.setStyle({
+                fillColor: '#2196F3', fillOpacity: 0.06,
+                color: '#90CAF9', weight: 0.8, opacity: 0.8
+            });
+        } else {
+            const pcode = layer.feature.properties.ADM3_PCODE;
+            if (partyPcodes.has(pcode)) {
+                layer.setStyle({
+                    fillColor: getPartyGlobalColor(currentParty),
+                    fillOpacity: 0.75,
+                    color: 'white', weight: 1.5, opacity: 0.9
+                });
+            } else {
+                layer.setStyle({
+                    fillColor: '#9aa5b1', fillOpacity: 0.04,
+                    color: '#c8d0d8', weight: 0.4, opacity: 0.5
+                });
+            }
+        }
+    });
+}
+
+function showPartyLegend() {
+    if (!currentParty) return;
+    const legendDiv = document.getElementById('legend');
+    const pcodes = partyMunicipalitiesMap[currentParty] || [];
+    const color = getPartyGlobalColor(currentParty);
+    const bgChip = hexToRgba(color, 0.13);
+    const borderChip = hexToRgba(color, 0.35);
+    const bgHover = hexToRgba(color, 0.25);
+
+    const municipalities = pcodes
+        .map(pcode => {
+            const cfg = municipalitiesIndex[pcode];
+            return cfg ? { pcode, name: cfg.name, department: cfg.department } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => a.department.localeCompare(b.department, 'es') || a.name.localeCompare(b.name, 'es'));
+
+    const chipsHTML = municipalities.map(m => `
+        <button class="party-chip" data-pcode="${m.pcode}"
+            style="background:${bgChip};border-color:${borderChip};"
+            onmouseover="this.style.background='${bgHover}'"
+            onmouseout="this.style.background='${bgChip}'">
+            <span class="party-chip-name">${m.name}</span>
+            <span class="party-chip-dept">${m.department.slice(0, 3).toUpperCase()}</span>
+        </button>
+    `).join('');
+
+    legendDiv.innerHTML = `
+        <div class="legend-header">
+            <div style="display:flex;align-items:center;gap:7px;min-width:0;overflow:hidden;">
+                <div style="width:11px;height:11px;border-radius:50%;background:${color};flex-shrink:0;"></div>
+                <div class="legend-title" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">${currentParty}</div>
+            </div>
+            <button class="legend-toggle" aria-label="Colapsar">${legendCollapsed ? '▲' : '▼'}</button>
+        </div>
+        <div class="legend-body">
+            <div class="party-mun-count">${pcodes.length} municipio${pcodes.length !== 1 ? 's' : ''} ganado${pcodes.length !== 1 ? 's' : ''} <span style="color:#7a8fa6;font-weight:500;">(${((pcodes.length / Object.keys(municipalitiesIndex).length) * 100).toFixed(1)}%)</span></div>
+            <div class="party-chips-container">${chipsHTML}</div>
+        </div>
+    `;
+
+    if (legendCollapsed) legendDiv.classList.add('legend-collapsed');
+    else legendDiv.classList.remove('legend-collapsed');
+
+    legendDiv.querySelectorAll('.party-chip[data-pcode]').forEach(chip => {
+        chip.addEventListener('click', () => selectMunicipality(chip.dataset.pcode));
+    });
+}
+
+function selectParty(party) {
+    currentParty = party;
+    currentMunicipality = null;
+
+    if (currentGeoJsonLayer) { map.removeLayer(currentGeoJsonLayer); currentGeoJsonLayer = null; }
+    if (currentBoundaryLayer) { map.removeLayer(currentBoundaryLayer); currentBoundaryLayer = null; }
+    geoJsonData = {};
+    CONFIG.partyColors = {}; CONFIG.partiesData = {}; CONFIG.totals = {};
+
+    if (boliviaLayer) boliviaLayer.addTo(map);
+    map.flyTo([-16.5, -65.0], 6, { duration: 1.0 });
+    updateBoliviaLayerStyle();
+
+    document.getElementById('legend').style.display = '';
+    showPartyLegend();
+    document.getElementById('layer-select-wrapper').style.display = 'none';
+    document.getElementById('controls-subtitle').textContent = 'Bolivia - Subnacionales 2026';
+    document.getElementById('municipality-search').value = '';
+    closeSearchDropdown();
+}
+
+function clearParty() {
+    currentParty = null;
+    const sel = document.getElementById('party-select');
+    if (sel) sel.value = '';
+    updateBoliviaLayerStyle();
+    if (!currentMunicipality) document.getElementById('legend').style.display = 'none';
+}
+
 // Initialize — load municipios.geojson, show Bolivia overview
 async function init() {
     document.getElementById('layer-select-wrapper').style.display = 'none';
@@ -902,6 +1120,21 @@ async function init() {
     } catch (e) {
         console.error('Error loading municipios.geojson:', e);
     }
+
+    // Load party winners data + global party colors
+    try {
+        const [csvRes, jsonRes] = await Promise.all([
+            fetch('datamun/data-partidos.csv'),
+            fetch('datamun/partidos_ganadores.json')
+        ]);
+        const csvText = await csvRes.text();
+        partyGlobalColors = buildPartyGlobalColors(csvText);
+        const rawPartyData = await jsonRes.json();
+        partyMunicipalitiesMap = matchPartiesToPcodes(rawPartyData);
+        populatePartySelect(partyMunicipalitiesMap);
+    } catch (e) {
+        console.error('Error loading party data:', e);
+    }
 }
 
 // Search input wiring (script is at bottom of body, DOM is already ready)
@@ -913,6 +1146,10 @@ if (searchInput) {
             closeSearchDropdown();
             if (currentMunicipality) resetToBolivia();
         } else {
+            // Show party search only if no party is active; otherwise stay filtered
+            if (!currentParty) {
+                document.getElementById('party-search-wrapper').style.display = '';
+            }
             renderSearchResults(val);
         }
     });
@@ -927,6 +1164,18 @@ if (searchInput) {
         if (e.key === 'Escape') {
             closeSearchDropdown();
             searchInput.blur();
+        }
+    });
+}
+
+// Party select event
+const partySelect = document.getElementById('party-select');
+if (partySelect) {
+    partySelect.addEventListener('change', (e) => {
+        if (e.target.value) {
+            selectParty(e.target.value);
+        } else {
+            clearParty();
         }
     });
 }

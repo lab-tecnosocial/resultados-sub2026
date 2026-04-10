@@ -1,0 +1,2012 @@
+[
+  {
+    "partido": "VOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Santa Cruz de La Sierra",
+    "votos": 658338
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Cochabamba",
+    "municipio": "Cochabamba",
+    "votos": 197782
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Nuestra Señora de La Paz",
+    "votos": 124367
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "El Alto",
+    "votos": 95079
+  },
+  {
+    "partido": "T",
+    "departamento": "Tarija",
+    "municipio": "Tarija",
+    "votos": 75184
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Oruro",
+    "municipio": "Oruro",
+    "votos": 51186
+  },
+  {
+    "partido": "SW",
+    "departamento": "Santa Cruz",
+    "municipio": "Warnes",
+    "votos": 47980
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Villa Tunari",
+    "votos": 36391
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Sucre",
+    "votos": 33894
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Sacaba",
+    "votos": 32654
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "Trinidad",
+    "votos": 26608
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Puerto Villarroel",
+    "votos": 24189
+  },
+  {
+    "partido": "FRI",
+    "departamento": "Cochabamba",
+    "municipio": "Quillacollo",
+    "votos": 21733
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Potosí",
+    "votos": 21561
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Entre Ríos",
+    "votos": 17954
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "La Guardia",
+    "votos": 14841
+  },
+  {
+    "partido": "F.S.D.",
+    "departamento": "Beni",
+    "municipio": "Riberalta",
+    "votos": 14469
+  },
+  {
+    "partido": "UNIDOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Cotoca",
+    "votos": 13555
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "El Torno",
+    "votos": 12524
+  },
+  {
+    "partido": "AIR",
+    "departamento": "Tarija",
+    "municipio": "Yacuiba",
+    "votos": 12373
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Montero",
+    "votos": 12367
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Camiri",
+    "votos": 11217
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Shinahota",
+    "votos": 10522
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Tiquipaya",
+    "votos": 9694
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Chimoré",
+    "votos": 9276
+  },
+  {
+    "partido": "FE",
+    "departamento": "Santa Cruz",
+    "municipio": "San Julián",
+    "votos": 9123
+  },
+  {
+    "partido": "FE",
+    "departamento": "Santa Cruz",
+    "municipio": "Yapacaní",
+    "votos": 8927
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Villazón",
+    "votos": 8694
+  },
+  {
+    "partido": "LIBRE-PANDO",
+    "departamento": "Pando",
+    "municipio": "Cobija",
+    "votos": 7546
+  },
+  {
+    "partido": "GH",
+    "departamento": "Santa Cruz",
+    "municipio": "Ascención de Guarayos",
+    "votos": 7489
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "La Paz",
+    "municipio": "Viacha",
+    "votos": 7356
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "San Borja",
+    "votos": 6892
+  },
+  {
+    "partido": "FRI",
+    "departamento": "La Paz",
+    "municipio": "Caranavi",
+    "votos": 6705
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Beni",
+    "municipio": "Guayaramerín",
+    "votos": 6588
+  },
+  {
+    "partido": "UNIDOS-",
+    "departamento": "Cochabamba",
+    "municipio": "Colcapirhua",
+    "votos": 6473
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Cochabamba",
+    "municipio": "Sipesipe",
+    "votos": 6366
+  },
+  {
+    "partido": "PPS",
+    "departamento": "Cochabamba",
+    "municipio": "Vinto",
+    "votos": 6029
+  },
+  {
+    "partido": "FE",
+    "departamento": "Santa Cruz",
+    "municipio": "Cuatro Cañadas",
+    "votos": 5944
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Puerto Quijarro",
+    "votos": 5917
+  },
+  {
+    "partido": "CDC",
+    "departamento": "Tarija",
+    "municipio": "Bermejo",
+    "votos": 5827
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Concepción",
+    "votos": 5650
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Porongo",
+    "votos": 5315
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Tarija",
+    "municipio": "San Lorenzo",
+    "votos": 5299
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Tapacarí",
+    "votos": 5173
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Ayopaya",
+    "votos": 5117
+  },
+  {
+    "partido": "FRI",
+    "departamento": "Cochabamba",
+    "municipio": "Punata",
+    "votos": 5085
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Tarija",
+    "municipio": "Villa Montes",
+    "votos": 4897
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Monteagudo",
+    "votos": 4778
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Tupiza",
+    "votos": 4655
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Tarija",
+    "municipio": "Entre Ríos",
+    "votos": 4564
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Totora",
+    "votos": 4549
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Pocoata",
+    "votos": 4468
+  },
+  {
+    "partido": "UNIDOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Mineros",
+    "votos": 4459
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "Pailón",
+    "votos": 4408
+  },
+  {
+    "partido": "NGP",
+    "departamento": "La Paz",
+    "municipio": "Achacachi",
+    "votos": 4308
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Cochabamba",
+    "municipio": "Colomi",
+    "votos": 4279
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "Buena Vista",
+    "votos": 4249
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Cocapata",
+    "votos": 4145
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "San Ignacio",
+    "votos": 4141
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Pucarani",
+    "votos": 4031
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Sorata",
+    "votos": 4014
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Colquechaca",
+    "votos": 4009
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Potosí",
+    "municipio": "Uyuni",
+    "votos": 3987
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Tiraque",
+    "votos": 3964
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Potosí",
+    "municipio": "Llallagua",
+    "votos": 3913
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Santa Cruz",
+    "municipio": "Puerto Suarez",
+    "votos": 3874
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Cabezas",
+    "votos": 3849
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "La Paz",
+    "municipio": "Achocalla",
+    "votos": 3704
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Morochata",
+    "votos": 3703
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Betanzos",
+    "votos": 3689
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "La Asunta",
+    "votos": 3672
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Cochabamba",
+    "municipio": "Capinota",
+    "votos": 3590
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "San Pedro",
+    "votos": 3578
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "Comarapa",
+    "votos": 3538
+  },
+  {
+    "partido": "CDC",
+    "departamento": "Tarija",
+    "municipio": "Padcaya",
+    "votos": 3444
+  },
+  {
+    "partido": "SPT",
+    "departamento": "Santa Cruz",
+    "municipio": "Roboré",
+    "votos": 3419
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "San Lucas",
+    "votos": 3327
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Coripata",
+    "votos": 3313
+  },
+  {
+    "partido": "DESPIERTA",
+    "departamento": "Beni",
+    "municipio": "Puerto Menor de Rurrenabaque",
+    "votos": 3286
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Vallegrande",
+    "votos": 3210
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "San Carlos",
+    "votos": 3172
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Huanuni",
+    "votos": 3170
+  },
+  {
+    "partido": "UNIDOS-",
+    "departamento": "Cochabamba",
+    "municipio": "Aiquile",
+    "votos": 3071
+  },
+  {
+    "partido": "UN",
+    "departamento": "La Paz",
+    "municipio": "Chulumani",
+    "votos": 3054
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Cliza",
+    "votos": 3013
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Laja",
+    "votos": 2992
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Oruro",
+    "municipio": "Challapata",
+    "votos": 2923
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Sacaca",
+    "votos": 2886
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "Magdalena",
+    "votos": 2796
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Santa Cruz",
+    "municipio": "San Javier",
+    "votos": 2786
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "Santa Ana",
+    "votos": 2778
+  },
+  {
+    "partido": "CDC",
+    "departamento": "Tarija",
+    "municipio": "Uriondo",
+    "votos": 2775
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "San Pedro de Macha",
+    "votos": 2735
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "San Pedro",
+    "votos": 2695
+  },
+  {
+    "partido": "TUFE",
+    "departamento": "Beni",
+    "municipio": "San Ignacio",
+    "votos": 2605
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Oruro",
+    "municipio": "Caracollo",
+    "votos": 2593
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Mizque",
+    "votos": 2571
+  },
+  {
+    "partido": "FE",
+    "departamento": "Santa Cruz",
+    "municipio": "Fernández Alonso",
+    "votos": 2558
+  },
+  {
+    "partido": "VIDA",
+    "departamento": "La Paz",
+    "municipio": "Patacamaya",
+    "votos": 2556
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "San Matías",
+    "votos": 2555
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "San Miguel",
+    "votos": 2540
+  },
+  {
+    "partido": "MNR",
+    "departamento": "Beni",
+    "municipio": "Reyes",
+    "votos": 2532
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "San José",
+    "votos": 2520
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Chuquisaca",
+    "municipio": "Camargo",
+    "votos": 2498
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Toro Toro",
+    "votos": 2472
+  },
+  {
+    "partido": "FRI",
+    "departamento": "Pando",
+    "municipio": "Sena",
+    "votos": 2449
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Cochabamba",
+    "municipio": "Pojo",
+    "votos": 2436
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Potosí",
+    "municipio": "Uncía",
+    "votos": 2433
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "Cajuata",
+    "votos": 2379
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Portachuelo",
+    "votos": 2372
+  },
+  {
+    "partido": "APP",
+    "departamento": "Potosí",
+    "municipio": "Tinguipaya",
+    "votos": 2344
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Sicasica",
+    "votos": 2302
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "General Saavedra",
+    "votos": 2300
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Desaguadero",
+    "votos": 2296
+  },
+  {
+    "partido": "T",
+    "departamento": "Tarija",
+    "municipio": "Caraparí",
+    "votos": 2251
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Irupana",
+    "votos": 2247
+  },
+  {
+    "partido": "TODOS-",
+    "departamento": "Santa Cruz",
+    "municipio": "Pampagrande",
+    "votos": 2227
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "El Carmen Rivero Tórrez",
+    "votos": 2225
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Cotagaita",
+    "votos": 2219
+  },
+  {
+    "partido": "VIDA",
+    "departamento": "La Paz",
+    "municipio": "Colquencha",
+    "votos": 2172
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Arque",
+    "votos": 2169
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Calamarca",
+    "votos": 2154
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Tacopaya",
+    "votos": 2129
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Cochabamba",
+    "municipio": "San Benito",
+    "votos": 2119
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Mapiri",
+    "votos": 2094
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Palca",
+    "votos": 2091
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Inquisivi",
+    "votos": 2085
+  },
+  {
+    "partido": "MTS",
+    "departamento": "La Paz",
+    "municipio": "Teoponte",
+    "votos": 2081
+  },
+  {
+    "partido": "DESPIERTA",
+    "departamento": "Beni",
+    "municipio": "Santa Rosa",
+    "votos": 2079
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Santa Cruz",
+    "municipio": "San Ramón",
+    "votos": 2067
+  },
+  {
+    "partido": "JALLALLA LP",
+    "departamento": "La Paz",
+    "municipio": "Cairoma",
+    "votos": 2061
+  },
+  {
+    "partido": "TODOS-",
+    "departamento": "Santa Cruz",
+    "municipio": "El Puente",
+    "votos": 2036
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Palos Blancos",
+    "votos": 2033
+  },
+  {
+    "partido": "ASP",
+    "departamento": "La Paz",
+    "municipio": "Coroico",
+    "votos": 2011
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Batallas",
+    "votos": 1993
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Cochabamba",
+    "municipio": "Arbieto",
+    "votos": 1943
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "Samaipata",
+    "votos": 1915
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Copacabana",
+    "votos": 1900
+  },
+  {
+    "partido": "VOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Mairana",
+    "votos": 1899
+  },
+  {
+    "partido": "UPP",
+    "departamento": "Pando",
+    "municipio": "San Lorenzo",
+    "votos": 1889
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Villa Serrano",
+    "votos": 1876
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Aucapata",
+    "votos": 1847
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Potosí",
+    "municipio": "Puna",
+    "votos": 1835
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Colcha \"K\"",
+    "votos": 1824
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Apolo",
+    "votos": 1813
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Cochabamba",
+    "municipio": "Villa Rivero",
+    "votos": 1808
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Cochabamba",
+    "municipio": "Arani",
+    "votos": 1793
+  },
+  {
+    "partido": "MTS",
+    "departamento": "La Paz",
+    "municipio": "Colquiri",
+    "votos": 1779
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Padilla",
+    "votos": 1765
+  },
+  {
+    "partido": "CAOP",
+    "departamento": "Potosí",
+    "municipio": "Chayanta",
+    "votos": 1746
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Guanay",
+    "votos": 1712
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Incahuasi",
+    "votos": 1708
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Ckochas",
+    "votos": 1697
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "Alto Beni",
+    "votos": 1695
+  },
+  {
+    "partido": "JALLALLA LP",
+    "departamento": "La Paz",
+    "municipio": "Puerto Acosta",
+    "votos": 1662
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Potosí",
+    "municipio": "Caiza \"D\"",
+    "votos": 1660
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Chuquisaca",
+    "municipio": "Huacareta",
+    "votos": 1656
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Atocha",
+    "votos": 1642
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "Luribay",
+    "votos": 1629
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "Lagunillas",
+    "votos": 1627
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Villa Vaca Guzmán",
+    "votos": 1618
+  },
+  {
+    "partido": "TODOS-",
+    "departamento": "Santa Cruz",
+    "municipio": "San Antonio de Lomerio",
+    "votos": 1614
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "Santa Rosa",
+    "votos": 1564
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Anzaldo",
+    "votos": 1561
+  },
+  {
+    "partido": "T.S.",
+    "departamento": "La Paz",
+    "municipio": "Puerto Mayor de Carabuco",
+    "votos": 1560
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Pando",
+    "municipio": "Porvenir",
+    "votos": 1546
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Caripuyo",
+    "votos": 1534
+  },
+  {
+    "partido": "MNR",
+    "departamento": "Beni",
+    "municipio": "San Joaquín",
+    "votos": 1510
+  },
+  {
+    "partido": "PODER-O",
+    "departamento": "La Paz",
+    "municipio": "Mecapaca",
+    "votos": 1508
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Chuquisaca",
+    "municipio": "Culpina",
+    "votos": 1490
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Beni",
+    "municipio": "San Andrés",
+    "votos": 1487
+  },
+  {
+    "partido": "DESPIERTA",
+    "departamento": "Beni",
+    "municipio": "San Ramón",
+    "votos": 1483
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Poopó",
+    "votos": 1472
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Porco",
+    "votos": 1446
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Vacas",
+    "votos": 1445
+  },
+  {
+    "partido": "TU",
+    "departamento": "Cochabamba",
+    "municipio": "Tarata",
+    "votos": 1440
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Tacacoma",
+    "votos": 1436
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "Saipina",
+    "votos": 1431
+  },
+  {
+    "partido": "AORA",
+    "departamento": "Oruro",
+    "municipio": "Corque",
+    "votos": 1402
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Mojocoya",
+    "votos": 1395
+  },
+  {
+    "partido": "ASLP",
+    "departamento": "La Paz",
+    "municipio": "Villa Ancoraimes",
+    "votos": 1387
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Poroma",
+    "votos": 1377
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Azurduy",
+    "votos": 1374
+  },
+  {
+    "partido": "ASP",
+    "departamento": "La Paz",
+    "municipio": "Quime",
+    "votos": 1363
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "Oruro",
+    "municipio": "Paria",
+    "votos": 1353
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Santiago de Huari",
+    "votos": 1316
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Yotala",
+    "votos": 1305
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Santivañez",
+    "votos": 1299
+  },
+  {
+    "partido": "CONACH-W",
+    "departamento": "Potosí",
+    "municipio": "Vitiche",
+    "votos": 1298
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Tacobamba",
+    "votos": 1293
+  },
+  {
+    "partido": "CREEMOS",
+    "departamento": "Santa Cruz",
+    "municipio": "Colpa Bélgica",
+    "votos": 1270
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Tarija",
+    "municipio": "El Puente",
+    "votos": 1252
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Tarabuco",
+    "votos": 1251
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Pocona",
+    "votos": 1251
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "San Javier",
+    "votos": 1250
+  },
+  {
+    "partido": "CAMPO",
+    "departamento": "Santa Cruz",
+    "municipio": "Okinawa Uno",
+    "votos": 1231
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Potosí",
+    "municipio": "Chuquihuta Ayllu Jucumani",
+    "votos": 1226
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Villa Charcas",
+    "votos": 1222
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "San Buenaventura",
+    "votos": 1222
+  },
+  {
+    "partido": "NGP",
+    "departamento": "La Paz",
+    "municipio": "Chuma",
+    "votos": 1213
+  },
+  {
+    "partido": "SPBC",
+    "departamento": "La Paz",
+    "municipio": "Ixiamas",
+    "votos": 1213
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "La Paz",
+    "municipio": "Tiahuanacu",
+    "votos": 1199
+  },
+  {
+    "partido": "IH",
+    "departamento": "La Paz",
+    "municipio": "Charazani",
+    "votos": 1184
+  },
+  {
+    "partido": "SOMOS",
+    "departamento": "Oruro",
+    "municipio": "Sabaya",
+    "votos": 1179
+  },
+  {
+    "partido": "SPBC",
+    "departamento": "La Paz",
+    "municipio": "Ayo Ayo",
+    "votos": 1160
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "San Pedro de Tiquina",
+    "votos": 1145
+  },
+  {
+    "partido": "MDA",
+    "departamento": "Pando",
+    "municipio": "Filadelfia",
+    "votos": 1126
+  },
+  {
+    "partido": "MACOJMA",
+    "departamento": "La Paz",
+    "municipio": "Jesús de Machaka",
+    "votos": 1122
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Cochabamba",
+    "municipio": "Sicaya",
+    "votos": 1119
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Santuario de Quillacas",
+    "votos": 1111
+  },
+  {
+    "partido": "SPBC",
+    "departamento": "La Paz",
+    "municipio": "Mocomoco",
+    "votos": 1110
+  },
+  {
+    "partido": "MTS",
+    "departamento": "La Paz",
+    "municipio": "Santiago de Huata",
+    "votos": 1105
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Cochabamba",
+    "municipio": "Omereque",
+    "votos": 1102
+  },
+  {
+    "partido": "NGP",
+    "departamento": "La Paz",
+    "municipio": "Corocoro",
+    "votos": 1099
+  },
+  {
+    "partido": "NGP",
+    "departamento": "La Paz",
+    "municipio": "Papel Pampa",
+    "votos": 1093
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Santa Cruz",
+    "municipio": "San Juan",
+    "votos": 1088
+  },
+  {
+    "partido": "AAGP",
+    "departamento": "Pando",
+    "municipio": "Puerto Gonzalo Moreno",
+    "votos": 1071
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Beni",
+    "municipio": "Huacaraje",
+    "votos": 1065
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Acasio",
+    "votos": 1042
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Cochabamba",
+    "municipio": "Toco",
+    "votos": 1034
+  },
+  {
+    "partido": "CDC",
+    "departamento": "Tarija",
+    "municipio": "Yunchará",
+    "votos": 1034
+  },
+  {
+    "partido": "ASP",
+    "departamento": "La Paz",
+    "municipio": "Sapahaqui",
+    "votos": 1020
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Tipuani",
+    "votos": 1013
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "San Rafael",
+    "votos": 1002
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Calacoto",
+    "votos": 1001
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Chaquí",
+    "votos": 995
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Macharetí",
+    "votos": 977
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Ayata",
+    "votos": 967
+  },
+  {
+    "partido": "PDC",
+    "departamento": "La Paz",
+    "municipio": "Ichoca",
+    "votos": 959
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Umala",
+    "votos": 956
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Pelechuco",
+    "votos": 952
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Chuquisaca",
+    "municipio": "Tarvita",
+    "votos": 943
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Caquiaviri",
+    "votos": 935
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Chuquisaca",
+    "municipio": "Presto",
+    "votos": 933
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Icla",
+    "votos": 922
+  },
+  {
+    "partido": "POKUY",
+    "departamento": "Cochabamba",
+    "municipio": "Bolivar",
+    "votos": 918
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "Moromoro",
+    "votos": 911
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Cochabamba",
+    "municipio": "Tolata",
+    "votos": 895
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Tomave",
+    "votos": 895
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Potosí",
+    "municipio": "Ravelo",
+    "votos": 883
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Totora",
+    "votos": 867
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Oruro",
+    "municipio": "Toledo",
+    "votos": 864
+  },
+  {
+    "partido": "ASP",
+    "departamento": "La Paz",
+    "municipio": "Yanacachi",
+    "votos": 861
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Ocurí",
+    "votos": 852
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Santa Cruz",
+    "municipio": "Boyuibe",
+    "votos": 852
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "Puerto Mayor de Guaqui",
+    "votos": 839
+  },
+  {
+    "partido": "DESPIERTA",
+    "departamento": "Beni",
+    "municipio": "Baures",
+    "votos": 833
+  },
+  {
+    "partido": "A-UPP",
+    "departamento": "La Paz",
+    "municipio": "Quiabaya",
+    "votos": 808
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "La Paz",
+    "municipio": "Huarina",
+    "votos": 806
+  },
+  {
+    "partido": "NGP",
+    "departamento": "La Paz",
+    "municipio": "Escoma",
+    "votos": 804
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Cuevo",
+    "votos": 790
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Oruro",
+    "municipio": "Curahuara de Carangas",
+    "votos": 787
+  },
+  {
+    "partido": "SPBC",
+    "departamento": "La Paz",
+    "municipio": "Collana",
+    "votos": 785
+  },
+  {
+    "partido": "TODOS-",
+    "departamento": "Santa Cruz",
+    "municipio": "Urubicha",
+    "votos": 784
+  },
+  {
+    "partido": "ASP",
+    "departamento": "La Paz",
+    "municipio": "Puerto Pérez",
+    "votos": 781
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Chuquisaca",
+    "municipio": "Tomina",
+    "votos": 779
+  },
+  {
+    "partido": "XS-CH",
+    "departamento": "Chuquisaca",
+    "municipio": "Sopachuy",
+    "votos": 772
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Zudañez",
+    "votos": 771
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Yocalla",
+    "votos": 738
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Alcalá",
+    "votos": 736
+  },
+  {
+    "partido": "CAOSAM",
+    "departamento": "La Paz",
+    "municipio": "La (Marka) San Andrés de Machaca",
+    "votos": 734
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Sacabamba",
+    "votos": 718
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Taraco",
+    "votos": 713
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Oruro",
+    "municipio": "Pampa Aullagas",
+    "votos": 712
+  },
+  {
+    "partido": "ASLP",
+    "departamento": "La Paz",
+    "municipio": "San Pedro de Curahuara",
+    "votos": 707
+  },
+  {
+    "partido": "LIBRE",
+    "departamento": "Chuquisaca",
+    "municipio": "Yamparáez",
+    "votos": 706
+  },
+  {
+    "partido": "JALLALLA LP",
+    "departamento": "La Paz",
+    "municipio": "Santiago de Callapa",
+    "votos": 698
+  },
+  {
+    "partido": "TUFE",
+    "departamento": "Beni",
+    "municipio": "Loreto",
+    "votos": 693
+  },
+  {
+    "partido": "MDA",
+    "departamento": "Pando",
+    "municipio": "Bolpebra",
+    "votos": 681
+  },
+  {
+    "partido": "FE",
+    "departamento": "Pando",
+    "municipio": "Puerto Rico",
+    "votos": 641
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Oruro",
+    "municipio": "Machacamarca",
+    "votos": 638
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Vila Vila",
+    "votos": 632
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Postrervalle",
+    "votos": 627
+  },
+  {
+    "partido": "APB-SUMATE",
+    "departamento": "Cochabamba",
+    "municipio": "Pasorapa",
+    "votos": 615
+  },
+  {
+    "partido": "ASLP",
+    "departamento": "La Paz",
+    "municipio": "Malla",
+    "votos": 602
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Oruro",
+    "municipio": "Andamarca",
+    "votos": 599
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Eucaliptus",
+    "votos": 599
+  },
+  {
+    "partido": "LIBRE-PANDO",
+    "departamento": "Pando",
+    "municipio": "Bella Flor",
+    "votos": 592
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Santa Cruz",
+    "municipio": "Pucará",
+    "votos": 592
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Comanche",
+    "votos": 585
+  },
+  {
+    "partido": "PDC",
+    "departamento": "Oruro",
+    "municipio": "Pazña",
+    "votos": 577
+  },
+  {
+    "partido": "SOLUCIONES-CON-TODOS",
+    "departamento": "Cochabamba",
+    "municipio": "Alalay",
+    "votos": 567
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "El Villar",
+    "votos": 566
+  },
+  {
+    "partido": "DEMOCRATAS",
+    "departamento": "Santa Cruz",
+    "municipio": "Quirusillas",
+    "votos": 563
+  },
+  {
+    "partido": "MTS",
+    "departamento": "La Paz",
+    "municipio": "Huatajata",
+    "votos": 562
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Potosí",
+    "municipio": "Arampampa",
+    "votos": 561
+  },
+  {
+    "partido": "PSC",
+    "departamento": "Santa Cruz",
+    "municipio": "Trigal",
+    "votos": 556
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Santiago de Machaca",
+    "votos": 542
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Pando",
+    "municipio": "Villa Nueva",
+    "votos": 542
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Huachacalla",
+    "votos": 526
+  },
+  {
+    "partido": "AORA",
+    "departamento": "Oruro",
+    "municipio": "Belén de Andamarca",
+    "votos": 522
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Yaco",
+    "votos": 517
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Nazacara de Pacajes",
+    "votos": 513
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Potosí",
+    "municipio": "San Pablo",
+    "votos": 507
+  },
+  {
+    "partido": "VENCEREMOS",
+    "departamento": "La Paz",
+    "municipio": "Humanata",
+    "votos": 506
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Combaya",
+    "votos": 500
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Oruro",
+    "municipio": "Antequera",
+    "votos": 498
+  },
+  {
+    "partido": "JALLALLA LP",
+    "departamento": "La Paz",
+    "municipio": "Chua Cocani",
+    "votos": 480
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Potosí",
+    "municipio": "Llica",
+    "votos": 480
+  },
+  {
+    "partido": "LIBRE-PANDO",
+    "departamento": "Pando",
+    "municipio": "San Pedro",
+    "votos": 476
+  },
+  {
+    "partido": "MTS",
+    "departamento": "Oruro",
+    "municipio": "Turco",
+    "votos": 475
+  },
+  {
+    "partido": "AORA",
+    "departamento": "Oruro",
+    "municipio": "Santiago de Huayllamarca",
+    "votos": 472
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Charaña",
+    "votos": 449
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "La Paz",
+    "municipio": "Curva",
+    "votos": 448
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Potosí",
+    "municipio": "Urmiri",
+    "votos": 447
+  },
+  {
+    "partido": "TUFE",
+    "departamento": "Beni",
+    "municipio": "Exaltación",
+    "votos": 428
+  },
+  {
+    "partido": "AGN",
+    "departamento": "Chuquisaca",
+    "municipio": "Las Carreras",
+    "votos": 427
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Waldo Ballivian",
+    "votos": 422
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Chuquisaca",
+    "municipio": "Villa Abecia",
+    "votos": 420
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Oruro",
+    "municipio": "El Choro",
+    "votos": 416
+  },
+  {
+    "partido": "NGP",
+    "departamento": "Potosí",
+    "municipio": "San Agustín",
+    "votos": 379
+  },
+  {
+    "partido": "M.P.S.",
+    "departamento": "La Paz",
+    "municipio": "Villa Libertad Licoma",
+    "votos": 375
+  },
+  {
+    "partido": "UPP",
+    "departamento": "Pando",
+    "municipio": "Santa Rosa",
+    "votos": 370
+  },
+  {
+    "partido": "UNIDOS-",
+    "departamento": "Cochabamba",
+    "municipio": "Villa Gualberto Villarroel",
+    "votos": 368
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "San Antonio de Esmoruco",
+    "votos": 350
+  },
+  {
+    "partido": "LIBRE-PANDO",
+    "departamento": "Pando",
+    "municipio": "Santos Mercado",
+    "votos": 329
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Catacora",
+    "votos": 327
+  },
+  {
+    "partido": "ASLP",
+    "departamento": "La Paz",
+    "municipio": "Tito Yupanqui",
+    "votos": 319
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "San Pedro de Quemes",
+    "votos": 319
+  },
+  {
+    "partido": "LIBRE-PANDO",
+    "departamento": "Pando",
+    "municipio": "Ingavi",
+    "votos": 289
+  },
+  {
+    "partido": "MDA",
+    "departamento": "Pando",
+    "municipio": "Nueva Esperanza",
+    "votos": 276
+  },
+  {
+    "partido": "UPC",
+    "departamento": "La Paz",
+    "municipio": "Chacarilla",
+    "votos": 254
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Oruro",
+    "municipio": "Esmeralda",
+    "votos": 250
+  },
+  {
+    "partido": "P.P.",
+    "departamento": "Oruro",
+    "municipio": "Escara",
+    "votos": 248
+  },
+  {
+    "partido": "P.P.",
+    "departamento": "Oruro",
+    "municipio": "Cruz de Machacamarca",
+    "votos": 236
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Cochabamba",
+    "municipio": "Tacachi",
+    "votos": 229
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Oruro",
+    "municipio": "La Rivera",
+    "votos": 214
+  },
+  {
+    "partido": "JACHAJAKISASOLFESORC",
+    "departamento": "Oruro",
+    "municipio": "Choquecota",
+    "votos": 210
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Tahua",
+    "votos": 207
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Oruro",
+    "municipio": "Todos Santos",
+    "votos": 197
+  },
+  {
+    "partido": "DESPIERTA",
+    "departamento": "Beni",
+    "municipio": "Puerto Siles",
+    "votos": 182
+  },
+  {
+    "partido": "A.S.",
+    "departamento": "Potosí",
+    "municipio": "Mojinete",
+    "votos": 160
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Oruro",
+    "municipio": "Yunguyo del Litoral",
+    "votos": 157
+  },
+  {
+    "partido": "Patria (alianzas)",
+    "departamento": "Oruro",
+    "municipio": "Carangas",
+    "votos": 115
+  },
+  {
+    "partido": "P.P.",
+    "departamento": "Oruro",
+    "municipio": "Coipasa",
+    "votos": 110
+  }
+]

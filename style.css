@@ -678,6 +678,14 @@ svg path {
         height: 3px !important;
     }
 
+    .party-chip-name {
+        max-width: 100px;
+    }
+
+    .party-mun-count {
+        font-size: 11px;
+    }
+
     /* Credit más compacto en móvil */
     .credit {
         bottom: 5px;
@@ -772,6 +780,68 @@ svg path {
     height: 1px;
     background: #e0e6ed;
     margin: 8px 0;
+}
+
+/* Party mode — chips in legend */
+.party-mun-count {
+    font-size: 12px;
+    font-weight: 700;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #e0e6ed;
+}
+
+.party-chips-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+}
+
+.party-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 8px 3px 7px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: transform 0.12s ease, box-shadow 0.12s ease;
+    font-family: inherit;
+    text-align: left;
+    max-width: 100%;
+}
+
+.party-chip:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+}
+
+.party-chip-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #2c3e50;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 130px;
+}
+
+.party-chip-dept {
+    font-size: 9px;
+    font-weight: 700;
+    color: #7a8fa6;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.3px;
+}
+
+/* Separator between municipality search and party select */
+#party-search-wrapper {
+    padding-top: 8px;
+    border-top: 1px solid #e0e6ed;
+    margin-top: 4px;
 }
 
 /* Toast notification */
