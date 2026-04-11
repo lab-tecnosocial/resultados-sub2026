@@ -86,7 +86,7 @@ const CONFIG = {
 const map = L.map('map', {
     zoomControl: false,
     minZoom: 5
-}).setView([-16.5, -65.0], 6);
+}).setView(window.innerWidth <= 768 ? [-15.0, -65.0] : [-16.5, -65.0], window.innerWidth <= 768 ? 6 : 6);
 
 L.control.zoom({ position: 'topright' }).addTo(map);
 
@@ -811,7 +811,7 @@ function resetToBolivia() {
         updateBoliviaLayerStyle();
         document.getElementById('legend').style.display = 'none';
     }
-    map.flyTo([-16.5, -65.0], 6, { duration: 1.2 });
+    map.flyTo([-16.5, -65.0], window.innerWidth <= 768 ? 5 : 6, { duration: 1.2 });
 }
 
 // Switch to a new municipality — orchestrates all data loading

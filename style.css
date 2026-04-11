@@ -224,12 +224,21 @@ svg path {
     max-height: 240px;
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.15) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
 
-.search-results::-webkit-scrollbar { width: 4px; }
-.search-results::-webkit-scrollbar-track { background: transparent; }
-.search-results::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.15); border-radius: 2px; }
+.search-results::-webkit-scrollbar {
+    width: 4px;
+}
+
+.search-results::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.search-results::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+}
 
 .search-result-item {
     display: flex;
@@ -245,9 +254,17 @@ svg path {
     background: rgba(26, 111, 186, 0.08);
 }
 
-.search-result-item:first-child { border-radius: 8px 8px 0 0; }
-.search-result-item:last-child { border-radius: 0 0 8px 8px; }
-.search-result-item:only-child { border-radius: 8px; }
+.search-result-item:first-child {
+    border-radius: 8px 8px 0 0;
+}
+
+.search-result-item:last-child {
+    border-radius: 0 0 8px 8px;
+}
+
+.search-result-item:only-child {
+    border-radius: 8px;
+}
 
 .search-result-name {
     font-size: 13px;
@@ -322,7 +339,7 @@ svg path {
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: thin;
-    scrollbar-color: rgba(0,0,0,0.15) transparent;
+    scrollbar-color: rgba(0, 0, 0, 0.15) transparent;
 }
 
 .legend-body::-webkit-scrollbar {
@@ -334,7 +351,7 @@ svg path {
 }
 
 .legend-body::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.15);
+    background: rgba(0, 0, 0, 0.15);
     border-radius: 2px;
 }
 
@@ -654,7 +671,7 @@ svg path {
     }
 
     .legend-party-item img,
-    .legend-party-item > div > div > div[style*="border-radius:50%"] {
+    .legend-party-item>div>div>div[style*="border-radius:50%"] {
         width: 14px !important;
         height: 14px !important;
         min-width: 14px;
@@ -674,7 +691,7 @@ svg path {
         height: 3px !important;
     }
 
-    .legend-party-bar > div {
+    .legend-party-bar>div {
         height: 3px !important;
     }
 
@@ -815,7 +832,7 @@ svg path {
 
 .party-chip:hover {
     transform: translateY(-1px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
 }
 
 .party-chip-name {
