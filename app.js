@@ -979,7 +979,11 @@ function matchPartiesToPcodes(rawData) {
 }
 
 function getPartyGlobalColor(party) {
+    // 1. Color estático definido en party-colors.js (editable manualmente)
+    if (typeof PARTY_COLORS !== 'undefined' && PARTY_COLORS[party]) return PARTY_COLORS[party];
+    // 2. Color detectado desde el CSV (primera ocurrencia del partido)
     if (partyGlobalColors[party]) return partyGlobalColors[party];
+    // 3. Fallback: color generado por hash del nombre
     let hash = 0;
     for (let i = 0; i < party.length; i++) hash = party.charCodeAt(i) + ((hash << 5) - hash);
     const hue = ((hash % 360) + 360) % 360;
